@@ -16,14 +16,19 @@
   "directories": {
     "doc": "docs"
   },
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/server.js",
   "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "test": "vitest"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "oxfmt": "^0.41.0",
