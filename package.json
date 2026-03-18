@@ -17,8 +17,10 @@
     "doc": "docs"
   },
   "type": "commonjs",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
