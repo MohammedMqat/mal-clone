@@ -7,7 +7,25 @@
     <title>Train Station</title>
   </head>
   <body>
-    <h1>Check Back Soon</h1>
+    <h1>Train schedule</h1>
+    <form>
+      <select id="select-direction">
+        <option>choose a direction</option>
+        <option>Northbound</option>
+        <option>Southbound</option>
+      </select>
+      <button id="submit">Submit</button>
+    </form>
+    <div id="result-box">
+      <table>
+        <tr>
+          <th>Arrival time</th>
+          <th>direction</th>
+        </tr>
+      </table>
+    </div>
+    <p id="date">...</p>
+    <p id="time">...</p>
     <script src="./script.js"></script>
   </body>
 </html>
