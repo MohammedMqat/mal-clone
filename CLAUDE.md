@@ -77,14 +77,16 @@ src/
 ### Student Progress
 
 - [x] Replace `public/index.html` with Top Anime page structure
-- [x] Fetch top anime from Jikan via Express proxy (`/api/top-anime`)
+- [x] Fetch top anime via Express proxy (`/api/TopAnime`)
 - [x] Render 10 anime cards with image, title, and score using `createElement` + `appendChild`
+- [x] Cards clickable — navigate to `/detail/?id={mal_id}`
 - [x] Build search page — input, button, event listener, fetch on submit, clear old results
-- [x] Proxy pattern implemented — frontend → Express → Jikan for search
+- [x] Proxy pattern on all pages — frontend never calls Jikan directly
+- [x] Detail page — reads `id` from URL, fetches `/api/anime-details/:id`, renders title, image, score, synopsis, episodes, type
 - [x] Basic supertest test passing (`search with valid query returns 200`)
+- [ ] Add pagination to search page
 - [ ] Finish mocked test using `search-one-piece.json` stub (in progress — bracket/structure issue)
 - [ ] Add unhappy path tests (missing query, rate limit simulation)
-- [ ] Build detail page that reads anime ID and fetches details
 - [ ] Style all 3 pages with CSS
 
 ### Student Understanding Checkpoints
