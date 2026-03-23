@@ -7,5 +7,8 @@ export const searchAnime = (req, res) => {
 
   fetch(`https://api.jikan.moe/v4/anime?q=${q}`)
     .then((response) => response.json())
-    .then((data) => res.json(data));
+    .then((data) => res.json(data))
+    .catch((error) => {
+      res.status(500).json({ message: "Internal server error: " + error.message });
+    });
 };

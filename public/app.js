@@ -1,5 +1,5 @@
 const container = document.getElementById("container");
-fetch(`/api/TopAnime`)
+fetch(`/api/top-anime`)
   .then((response) => response.json())
   .then((data) => {
     console.log(data.data);

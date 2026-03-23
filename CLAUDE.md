@@ -77,7 +77,7 @@ src/
 ### Student Progress
 
 - [x] Replace `public/index.html` with Top Anime page structure
-- [x] Fetch top anime via Express proxy (`/api/TopAnime`)
+- [x] Fetch top anime via Express proxy (`/api/top-anime`)
 - [x] Render 10 anime cards with image, title, and score using `createElement` + `appendChild`
 - [x] Cards clickable — navigate to `/detail/?id={mal_id}`
 - [x] Build search page — input, button, event listener, fetch on submit, clear old results
@@ -101,6 +101,7 @@ src/
 - Struggles with nested bracket/parenthesis structure in tests — needs more practice
 
 ### Test File State (`src/tests/search.test.js`)
+
 - Import: `import searchStub from "./stubs/search-one-piece.json" with { type: "json" }`
 - Stub file: `src/tests/stubs/search-one-piece.json` (real Jikan response shape)
 - Mock pattern: `vi.stubGlobal("fetch", () => Promise.resolve({ json: () => Promise.resolve(searchStub) }))`
@@ -129,16 +130,16 @@ src/
 
 7. **Home page proxy** — Top anime home page (`public/app.js`) must also go through Express proxy, not call Jikan directly.
 
-10. **PR Review comments (from Amoodaa on PR #4)**:
-    - `public/search/app.js` — Add `cursor: pointer` on hover to indicate cards are clickable
-    - `src/controllers/top-anime.js` — Add graceful error handling (`.catch()`)
-    - `src/controllers/anime-search.js` — Add graceful error handling (`.catch()`)
-    - `src/controllers/anime-details.js` — Add graceful error handling (`.catch()`)
-    - `src/tests/search.test.js` — Remove commented-out tests; add more expectations that assess the response body
-    - `src/app.js` — Look into URL encoding (`encodeURIComponent`) and handle it gracefully on search and detail pages
-    - `src/router.js` — Use kebab-case for URL paths (e.g. `/api/top-anime` not `/api/TopAnime`); read about RESTful API naming conventions
-    - `README.md` — Delete current content and write a proper README with user persona, user stories, and problem statement
+8. **PR Review comments (from Amoodaa on PR #4)**:
+   - `public/search/app.js` — Add `cursor: pointer` on hover to indicate cards are clickable
+   - `src/controllers/top-anime.js` — Add graceful error handling (`.catch()`)
+   - `src/controllers/anime-search.js` — Add graceful error handling (`.catch()`)
+   - `src/controllers/anime-details.js` — Add graceful error handling (`.catch()`)
+   - `src/tests/search.test.js` — Remove commented-out tests; add more expectations that assess the response body
+   - `src/app.js` — Look into URL encoding (`encodeURIComponent`) and handle it gracefully on search and detail pages
+   - `src/router.js` — Use kebab-case for URL paths (e.g. `/api/top-anime` not `/api/top-anime`); read about RESTful API naming conventions
+   - `README.md` — Delete current content and write a proper README with user persona, user stories, and problem statement
 
-8. **Detail page** — Must accept an `animeId` from the URL query param (e.g. `/detail/?id=21`). Fetches anime detail via Express proxy using that ID.
+9. **Detail page** — Must accept an `animeId` from the URL query param (e.g. `/detail/?id=21`). Fetches anime detail via Express proxy using that ID.
 
-9. **Navigation** — Cards on both home page and search results must be clickable and navigate to `/detail/?id={mal_id}`.
+10. **Navigation** — Cards on both home page and search results must be clickable and navigate to `/detail/?id={mal_id}`.
