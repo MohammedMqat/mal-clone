@@ -3,8 +3,6 @@ import request from "supertest";
 import { expect, vi, test } from "vitest";
 import onePieceSearchStub from "./stubs/search-one-piece.json";
 
-
-
 test("no query is provided", () => {
   return request(app).get("/api/search").expect(400);
 });
@@ -30,8 +28,8 @@ test("search returns results matching stub data", () => {
   vi.stubGlobal("fetch", () =>
     Promise.resolve({
       json: () => Promise.resolve(onePieceSearchStub),
-      ok: true
-    })
+      ok: true,
+    }),
   );
   return request(app)
     .get("/api/search?q=onepiece")
@@ -46,9 +44,8 @@ test("search returns 429 when Jikan is rate limited", () => {
     Promise.resolve({
       status: 429,
       ok: false,
-      json: () => Promise.resolve({ message: "rate limited" })
-    })
-  ); return request(app)
-    .get("/api/search?q=naruto")
-    .expect(429)
+      json: () => Promise.resolve({ message: "rate limited" }),
+    }),
+  );
+  return request(app).get("/api/search?q=naruto").expect(429);
 });

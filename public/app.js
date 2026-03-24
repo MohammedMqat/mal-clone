@@ -1,14 +1,12 @@
 const container = document.getElementById("container");
-fetchAnime().then(renderAnime)
+fetchAnime().then(renderAnime);
 function fetchAnime() {
-  return fetch(`/api/top-anime`)
-    .then((response) => response.json())
-
+  return fetch(`/api/top-anime`).then((response) => response.json());
 }
 function renderAnime(data) {
   data.data.forEach((element) => {
     const card = document.createElement("div");
-    card.className = "card"
+    card.className = "card";
     const img = document.createElement("img");
     img.src = element.images.jpg.image_url;
 

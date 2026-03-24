@@ -4,11 +4,10 @@ btn.addEventListener("click", (event) => {
   event.preventDefault();
 
   const result = document.getElementById("text").value;
-  fetchAnime(result).then(renderAnime)
+  fetchAnime(result).then(renderAnime);
 });
 function fetchAnime(query) {
-  return fetch(`/api/search?q=${encodeURIComponent(query)}`)
-    .then((response) => response.json())
+  return fetch(`/api/search?q=${encodeURIComponent(query)}`).then((response) => response.json());
 }
 function renderAnime(data) {
   searchResultsContainer.innerHTML = "";
@@ -34,5 +33,4 @@ function renderAnime(data) {
 
     searchResultsContainer.appendChild(card);
   });
-
 }

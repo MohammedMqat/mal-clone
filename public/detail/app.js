@@ -3,9 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
 function fetchAnime() {
-  return fetch(`/api/anime-details/${encodeURIComponent(id)}`)
-    .then((response) => response.json())
-
+  return fetch(`/api/anime-details/${encodeURIComponent(id)}`).then((response) => response.json());
 }
 function renderAnime(data) {
   const detail = document.createElement("div");
@@ -35,5 +33,5 @@ function renderAnime(data) {
 
   detail.appendChild(type);
   details.appendChild(detail);
-};
-fetchAnime().then(renderAnime)
+}
+fetchAnime().then(renderAnime);
