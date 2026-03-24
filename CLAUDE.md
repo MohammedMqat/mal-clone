@@ -90,7 +90,7 @@ src/
 - [x] URL encoding with `encodeURIComponent` on search and detail pages
 - [ ] Add pagination to search page
 - [ ] Learn and apply caching on Express routes (e.g. cache Jikan responses to avoid rate limiting)
-- [ ] Split render logic from fetch logic (separate functions) on all pages
+- [x] Split render logic from fetch logic (separate functions) on all pages
 - [x] Finish mocked test using `search-one-piece.json` stub
 - [x] Add body assertions to tests (status code, content type, body shape)
 - [ ] Add unhappy path tests (rate limit simulation, invalid ID)
