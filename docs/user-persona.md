@@ -9,18 +9,17 @@ Age: 31
 Job: Programmer
 
 Daily Routine:
-Wakes up each morning, has breakfast with his wife, then checks his phone to see when the
-next train arrives — so he knows exactly how much time he has left with her before heading
-out.
-
+comes back from work tired and want to relax and watch something funny as he like watching anime and spends a lot of time on his hobby
 Goal:
-Make the most of every minute at home by knowing the precise train arrival time, so he never
-has to leave earlier than necessary.
-
+want to know a quick detail on each anime from top list like rating and image and maybe a short story
+or search for a specific type of anime
+or what to watch tonight
+or find something to watch with friends or his girlfriend
 Frustration:
-When the app fails or doesn't load, he loses that window of certainty. He ends up leaving
-home early just to be safe — cutting his morning with his wife short for no reason.
+When the app fails or doesn't load,He ends watching anything
+not knowing if he wasting time on a show that he dont like or not.
+its like gambling if the show is good or he is wasting time
 
 What the app should do when it fails:
-Show a clear, friendly error message with the last known schedule or an estimated time, so
+Show a clear, friendly error message with the alternative sites or warm apology, so
 Mohammed isn't left with zero information and forced to guess.

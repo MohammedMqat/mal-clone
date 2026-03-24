@@ -84,9 +84,17 @@ src/
 - [x] Proxy pattern on all pages — frontend never calls Jikan directly
 - [x] Detail page — reads `id` from URL, fetches `/api/anime-details/:id`, renders title, image, score, synopsis, episodes, type
 - [x] Basic supertest test passing (`search with valid query returns 200`)
+- [x] Error handling with `.catch()` on all 3 controllers
+- [x] kebab-case routes (`/api/top-anime`, `/api/search`, `/api/anime-details/:id`)
+- [x] `cursor: pointer` on card hover for home and search pages
+- [x] URL encoding with `encodeURIComponent` on search and detail pages
 - [ ] Add pagination to search page
-- [ ] Finish mocked test using `search-one-piece.json` stub (in progress — bracket/structure issue)
-- [ ] Add unhappy path tests (missing query, rate limit simulation)
+- [ ] Learn and apply caching on Express routes (e.g. cache Jikan responses to avoid rate limiting)
+- [ ] Split render logic from fetch logic (separate functions) on all pages
+- [x] Finish mocked test using `search-one-piece.json` stub
+- [x] Add body assertions to tests (status code, content type, body shape)
+- [ ] Add unhappy path tests (rate limit simulation, invalid ID)
+- [x] Write proper README (user persona, user stories, problem statement)
 - [ ] Style all 3 pages with CSS
 
 ### Student Understanding Checkpoints

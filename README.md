@@ -1,11 +1,12 @@
 # week-5-project-express
 
-So now you have a clear picture of all 3 files:
+## Problem Statement
 
-- server.js → starts the server with listen() - app.js → creates Express app, sets up middleware - router.js → maps URLs to handler functions
-  Now one more piece — you have a controllers/ folder. What do you think goes in there, given what you just said about the router?
-  ❯ to handle HTTP requests/responses
-  ● Exactly! So the router says "this URL goes to this controller", and the controller actually does the work — calls the API, processes the data, sends the response.
-  So the flow is:
+Employees struggle with finding good anime to watch and waste time searching for the right
+choice. This app helps them search for any anime they want and shows them details including
+the score, title, and image, so they can decide if it's the right choice for them.
 
-Request → router → controller → response
+## Docs
+
+[User Persona](./docs/user-persona.md)
+[User Stories](./docs/user-stories.md)
