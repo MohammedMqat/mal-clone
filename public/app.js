@@ -11,7 +11,7 @@ function renderAnime(data) {
     img.src = element.images.jpg.image_url;
 
     card.addEventListener("click", () => {
-      window.location.href = `/detail/?id=${element.mal_id}`;
+      window.location.href = `/anime/${element.mal_id}`;
     });
     const p = document.createElement("p");
     p.textContent = element.title;

@@ -25,15 +25,25 @@
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "test": "vitest"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "prepare": "husky"
   },
   "dependencies": {
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "oxfmt": "^0.41.0",
     "oxlint": "^1.56.0",
     "supertest": "^7.2.2",
     "vitest": "^4.1.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "oxlint",
+      "oxfmt --check"
+    ]
   }
 }

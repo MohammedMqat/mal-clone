@@ -55,12 +55,15 @@ src/
   - Express routes/controllers fetch from Jikan and return the data
   - Student learned this pattern in week-3
 
-### Current State (as of 2026-03-21)
+### Current State (as of 2026-03-25)
 
 - `src/app.js` already has `express.static` pointed at `public/`
 - `public/index.html` updated — now shows "Top Anime" with `<div id="container"></div>` and links to `./app.js`
-- `public/app.js` is the active JS file (old `script.js` code is commented out)
-- Branch: `feat/get-train-schedule` (frontend work is happening here)
+- `public/app.js` is the active JS file
+- Branch: `feat/anime-showcase`
+- Search page pagination complete — Next/Previous buttons, URL reflects state, refresh works
+- Search page uses native form GET + `URLSearchParams` to read URL on load
+- Detail page now uses RESTful URL `/anime/:id` — ID extracted from `window.location.pathname`
 
 ### Jikan API Endpoints to Use
 
@@ -79,7 +82,7 @@ src/
 - [x] Replace `public/index.html` with Top Anime page structure
 - [x] Fetch top anime via Express proxy (`/api/top-anime`)
 - [x] Render 10 anime cards with image, title, and score using `createElement` + `appendChild`
-- [x] Cards clickable — navigate to `/detail/?id={mal_id}`
+- [x] Cards clickable — navigate to `/anime/{mal_id}` (RESTful, updated from `/detail/?id=`)
 - [x] Build search page — input, button, event listener, fetch on submit, clear old results
 - [x] Proxy pattern on all pages — frontend never calls Jikan directly
 - [x] Detail page — reads `id` from URL, fetches `/api/anime-details/:id`, renders title, image, score, synopsis, episodes, type
@@ -88,7 +91,7 @@ src/
 - [x] kebab-case routes (`/api/top-anime`, `/api/search`, `/api/anime-details/:id`)
 - [x] `cursor: pointer` on card hover for home and search pages
 - [x] URL encoding with `encodeURIComponent` on search and detail pages
-- [ ] Add pagination to search page
+- [x] Add pagination to search page (Next/Previous buttons, URL reflects q+page, refresh restores results)
 - [ ] Learn and apply caching on Express routes (e.g. cache Jikan responses to avoid rate limiting)
 - [x] Split render logic from fetch logic (separate functions) on all pages
 - [x] Finish mocked test using `search-one-piece.json` stub
@@ -96,6 +99,7 @@ src/
 - [ ] Add unhappy path tests (rate limit simulation, invalid ID)
 - [x] Write proper README (user persona, user stories, problem statement)
 - [ ] Style all 3 pages with CSS
+- [x] Rename detail page URL to RESTful format `/anime/:animeId`
 
 ### Student Understanding Checkpoints
 
@@ -107,6 +111,10 @@ src/
 - Knows proxy pattern — frontend never calls external API directly
 - Understands why mocking fetch matters (flaky tests, rate limits)
 - Struggles with nested bracket/parenthesis structure in tests — needs more practice
+- Understands URL as source of truth — `URLSearchParams`, `history.pushState`, reading params on load
+- Understands `||` fallback pattern for default values
+- Understands `document.querySelector` vs `getElementById`
+- Understands native form GET behavior (no JS needed for URL navigation)
 
 ### Test File State (`src/tests/search.test.js`)
 
@@ -148,6 +156,6 @@ src/
    - `src/router.js` — Use kebab-case for URL paths (e.g. `/api/top-anime` not `/api/top-anime`); read about RESTful API naming conventions
    - `README.md` — Delete current content and write a proper README with user persona, user stories, and problem statement
 
-9. **Detail page** — Must accept an `animeId` from the URL query param (e.g. `/detail/?id=21`). Fetches anime detail via Express proxy using that ID.
+9. **Detail page** — Uses RESTful URL `/anime/:id` (e.g. `/anime/21`). Express serves `public/detail/index.html` via a manual route in `router.js`. Frontend reads ID from `window.location.pathname.split("/")[2]`.
 
-10. **Navigation** — Cards on both home page and search results must be clickable and navigate to `/detail/?id={mal_id}`.
+10. **Navigation** — Cards on both home page and search results navigate to `/anime/{mal_id}`.
