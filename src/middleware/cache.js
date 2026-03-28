@@ -1,15 +1,16 @@
-const cacheMap = new Map();
-const TTLHours = 5;
-const TTLMinutes = TTLHours * 60;
-const TTLSeconds = TTLMinutes * 60;
-const TTLMilliseconds = TTLSeconds * 1000;
+import { LRUCache } from "lru-cache";
+
+const cache = new LRUCache({
+  max: 1000,
+  ttl: 1000 * 60 * 15,
+});
 
 export const cacheMiddleware = (req, res, next) => {
   const cacheKey = `${req.method}:${req.url}`;
   console.log(cacheKey);
 
-  if (cacheMap.has(cacheKey)) {
-    const { data } = cacheMap.get(cacheKey);
+  if (cache.has(cacheKey)) {
+    const { data } = cache.get(cacheKey);
     return res.json(data);
   }
 
@@ -17,22 +18,10 @@ export const cacheMiddleware = (req, res, next) => {
 
   res.json = function (data) {
     const time = Date.now();
-    cacheMap.set(cacheKey, { data, time });
+    cache.set(cacheKey, { data, time });
 
     return oldResJson.call(this, data);
   };
 
   next();
 };
-
-const evictionTimerSeconds = 10 * 60;
-
-setInterval(() => {
-  console.log(cacheMap);
-  cacheMap.forEach((value, key, map) => {
-    const shouldEvict = Date.now() > value.time + TTLMilliseconds;
-    if (shouldEvict) {
-      map.delete(key);
-    }
-  });
-}, evictionTimerSeconds * 1000);
