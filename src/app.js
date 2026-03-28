@@ -7,4 +7,5 @@ const publicDir = path.join(import.meta.dirname, "..", "public");
 export const app = express();
 
 app.use(express.static(publicDir));
+
 app.use("/", router);

@@ -47,5 +47,5 @@ test("search returns 429 when Jikan is rate limited", () => {
       json: () => Promise.resolve({ message: "rate limited" }),
     }),
   );
-  return request(app).get("/api/search?q=naruto").expect(429);
+  return request(app).get("/api/search?q=some-random-anime-we-didnt-use-before").expect(429);
 });

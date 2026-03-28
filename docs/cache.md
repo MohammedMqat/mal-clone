@@ -74,11 +74,11 @@ A reasonable TTL for top anime: **60–300 seconds**.
 
 ## Where to Add Caching in This Project
 
-| Controller              | Cache key suggestion     |
-| ----------------------- | ------------------------ |
-| `top-anime.js`          | `"top-anime"`            |
-| `anime-search.js`       | `"search:" + query`      |
-| `anime-details.js`      | `"anime:" + id`          |
+| Controller         | Cache key suggestion |
+| ------------------ | -------------------- |
+| `top-anime.js`     | `"top-anime"`        |
+| `anime-search.js`  | `"search:" + query`  |
+| `anime-details.js` | `"anime:" + id`      |
 
 ---
 
