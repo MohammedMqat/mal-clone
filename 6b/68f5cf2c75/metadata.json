@@ -1,0 +1,27 @@
+{
+  "cli_version": "0.5.1",
+  "checkpoint_id": "6b68f5cf2c75",
+  "strategy": "manual-commit",
+  "branch": "feat/manga",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "src/controllers/anime-details.js",
+    "src/controllers/anime-search.js",
+    "src/controllers/top-anime.js"
+  ],
+  "sessions": [
+    {
+      "metadata": "/6b/68f5cf2c75/0/metadata.json",
+      "transcript": "/6b/68f5cf2c75/0/full.jsonl",
+      "content_hash": "/6b/68f5cf2c75/0/content_hash.txt",
+      "prompt": "/6b/68f5cf2c75/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 154,
+    "cache_creation_tokens": 40981,
+    "cache_read_tokens": 1710061,
+    "output_tokens": 6173,
+    "api_call_count": 61
+  }
+}
