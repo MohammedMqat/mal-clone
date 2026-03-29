@@ -13,6 +13,6 @@ router.get("/anime/:id", (req, res) => {
 
 router.use(cacheMiddleware); // This line caches whats after only
 
-router.get("/api/top-anime", TopAnime);
-router.get("/api/search", searchAnime);
-router.get("/api/anime-details/:id", animeDetails);
+router.get("/api/:entityType/top", TopAnime);
+router.get("/api/:entityType/search", searchAnime);
+router.get("/api/:entityType/:id", animeDetails);
