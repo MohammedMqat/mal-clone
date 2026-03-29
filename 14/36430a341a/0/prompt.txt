@@ -1,0 +1,312 @@
+Teach
+
+---
+
+Mentor here, I want to add manga pages (using the same files):
+- Make the student check the JSON returns of both endpoints if they can be used for both, that way we may not need to copy and duplicate the pages, and that future development can be easier
+- If it can be done, implement different api endpoints (/:entityType/:entityId) instead of /anime/:animeId and /anime/top instead of /top-anime, which opens room for /:entityType/top
+- /anime/search and manga search could be the same controller using the entityType as param
+
+---
+
+Mentor here, Can you check the JIKAN documentation yourself and double check the student findings
+
+---
+
+Mentor here, Can you check the JIKAN documentation yourself and double check the student findings when he is done?
+
+---
+
+mal_id": 0,
+      "url": "string",
+      "images": { … },
+      "trailer": { … },
+      "approved": true,
+      "titles": [ … ],
+      "title": "string",
+      "title_english": "string",
+      "title_japanese": "string",
+      "title_synonyms": [ … ],
+      "type": "TV",
+      "source": "string",
+      "episodes": 0,
+      "status": "Finished Airing",
+      "airing": true,
+      "aired": { … },
+      "duration": "string",
+      "rating": "G - All Ages",
+      "score": 0.1,
+      "scored_by": 0,
+      "rank": 0,
+      "popularity": 0,
+      "members": 0,
+      "favorites": 0,
+      "synopsis": "string",
+      "background": "string",
+      "season": "summer",
+      "year": 0,
+      "broadcast": { … },
+      "producers": [ … ],
+      "licensors": [ … ],
+      "studios": [ … ],
+      "genres": [ … ],
+      "explicit_genres": [ … ],
+      "themes": [ … ],
+      "demographics": [ … ]
+    }
+  ],
+
+this for anime
+and 
+mal_id": 0,
+      "url": "string",
+      "images": { … },
+      "trailer": { … },
+      "approved": true,
+      "titles": [ … ],
+      "title": "string",
+      "title_english": "string",
+      "title_japanese": "string",
+      "title_synonyms": [ … ],
+      "type": "TV",
+      "source": "string",
+      "episodes": 0,
+      "status": "Finished Airing",
+      "airing": true,
+      "aired": { … },
+      "duration": "string",
+      "rating": "G - All Ages",
+      "score": 0.1,
+      "scored_by": 0,
+      "rank": 0,
+      "popularity": 0,
+      "members": 0,
+      "favorites": 0,
+      "synopsis": "string",
+      "background": "string",
+      "season": "summer",
+      "year": 0,
+      "broadcast": { … },
+      "producers": [ … ],
+      "licensors": [ … ],
+      "studios": [ … ],
+      "genres": [ … ],
+      "explicit_genres": [ … ],
+      "themes": [ … ],
+      "demographics": [ … ]
+    }
+  ],
+
+this for manga
+
+---
+
+yess sorry 
+  "data": [
+    {
+      "mal_id": 0,
+      "url": "string",
+      "images": { … },
+      "approved": true,
+      "titles": [ … ],
+      "title": "string",
+      "title_english": "string",
+      "title_japanese": "string",
+      "type": "Manga",
+      "chapters": 0,
+      "volumes": 0,
+      "status": "Finished",
+      "publishing": true,
+      "published": { … },
+      "score": 0.1,
+      "scored_by": 0,
+      "rank": 0,
+      "popularity": 0,
+      "members": 0,
+      "favorites": 0,
+      "synopsis": "string",
+      "background": "string",
+      "authors": [ … ],
+      "serializations": [ … ],
+      "genres": [ … ],
+      "explicit_genres": [ … ],
+      "themes": [ … ],
+      "demographics": [ … ]
+    }
+  ], this for manga
+
+---
+
+yes all 4 are identical
+
+---
+
+nope
+
+---
+
+type and episodes are different
+
+---
+
+display a different string
+
+---
+
+small conditional in the same file
+
+---
+
+insted of link have "anime" now it need to check if the page its anime or manga
+
+---
+
+guide me
+
+---
+
+yes but remind me again wwhat params is ?
+
+---
+
+api/manga
+
+---
+
+https://api.jikan.moe/v4/${entityType}/${id}
+
+---
+
+${entityType}
+
+---
+
+done
+
+---
+
+done
+
+---
+
+what could be different i mean search is different from :id
+
+---
+
+make an example for em
+
+---
+
+router.get("/api/:entityType/top", TopAnime);
+router.get("/api/:entityType/search", searchAnime);
+router.get("/api/:entityType/:id", animeDetails);
+
+---
+
+$(entityType)
+
+---
+
+https://api.jikan.moe/v4/top/$(entityType)?limit=10
+
+---
+
+fetch(`https://api.jikan.moe/v4/top/$(req.params.entityType)?limit=10`)
+
+---
+
+done
+
+---
+
+done read file
+
+---
+
+no explain it to me
+
+---
+
+dont knoww is it global defination or its only on anime search page
+
+---
+
+guess lets add it too
+
+---
+
+done read
+
+---
+
+done
+
+---
+
+done
+
+---
+
+read
+
+---
+
+done
+
+---
+
+api/top-anime
+
+---
+
+api/${entityType}
+
+---
+
+guide me
+
+---
+
+done
+
+---
+
+(`/api/anime/top`)
+
+---
+
+return fetch(`/api/anime/${encodeURIComponent(id)}`).then((response) => response.json());
+
+---
+
+fetch(`/api/anime/search?q=${encodeURIComponent(searchQuery)}&page=${currentPage}`)
+
+---
+
+yes
+
+---
+
+i mean should i type /api/anime/top or wwhat exactly on url space
+
+---
+
+yes
+
+---
+
+"Only manga and anime are allowed values"
+
+---
+
+const detail = document.createElement("div");
+  const image = document.createElement("img");
+  const title = document.createElement("h1");
+  const scoree = document.createElement("p");
+  const synopsis = document.createElement("p");
+  const episodes = document.createElement("p");
+  const type = document.createElement("p");
+
+---
+
+episodes.textContent = data.data.episodes;
