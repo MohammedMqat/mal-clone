@@ -1,43 +1,105 @@
-const details = document.getElementById("anime-details-container");
+// Search form
+document.getElementById("search-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const q = document.getElementById("text").value;
+  const type = document.getElementById("type").value;
+  if (q.trim()) {
+    window.location.href = `/search/${type}?q=${encodeURIComponent(q)}`;
+  }
+});
 
+const detailsContainer = document.getElementById("anime-details-container");
 const id = window.location.pathname.split("/")[2];
 const entityType = window.location.pathname.split("/")[1];
+
+// Set the type selector to match current entity
+document.getElementById("type").value = entityType;
 
 function fetchAnime() {
   return fetch(`/api/${entityType}/${encodeURIComponent(id)}`).then((response) => response.json());
 }
-function renderAnime(data) {
-  console.log(data);
-  const detail = document.createElement("div");
-  const image = document.createElement("img");
-  const title = document.createElement("h1");
-  const scoree = document.createElement("p");
-  const synopsis = document.createElement("p");
-  const episodes = document.createElement("p");
-  const type = document.createElement("p");
-  image.src = data.data.images.jpg.image_url;
-  title.textContent = data.data.title;
-  scoree.textContent = data.data.score;
 
-  synopsis.textContent = data.data.synopsis;
+function renderAnime(data) {
+  const d = data.data;
+  detailsContainer.innerHTML = "";
+
+  const card = document.createElement("div");
+  card.className = "detail-card";
+
+  // Cover image (right side)
+  const cover = document.createElement("div");
+  cover.className = "detail-cover";
+  const img = document.createElement("img");
+  img.src = d.images.jpg.large_image_url || d.images.jpg.image_url;
+  img.alt = d.title;
+  cover.appendChild(img);
+
+  // Info (left side)
+  const info = document.createElement("div");
+  info.className = "detail-info";
+
+  const title = document.createElement("h1");
+  title.className = "detail-title";
+  title.textContent = d.title;
+
+  // Meta tags
+  const metaGrid = document.createElement("div");
+  metaGrid.className = "detail-meta-grid";
+
+  const tags = [
+    { label: "Score", value: d.score ?? "N/A" },
+    { label: "Type", value: d.type || "Unknown" },
+    { label: "Status", value: d.status || "Unknown" },
+  ];
 
   if (entityType === "anime") {
-    episodes.textContent = data.data.episodes;
+    tags.push({ label: "Episodes", value: d.episodes ?? "?" });
   } else {
-    episodes.textContent = data.data.chapters;
+    tags.push({ label: "Chapters", value: d.chapters ?? "?" });
+    tags.push({ label: "Volumes", value: d.volumes ?? "?" });
   }
-  type.textContent = data.data.type;
 
-  detail.appendChild(image);
-  detail.appendChild(title);
+  if (d.year) tags.push({ label: "Year", value: d.year });
+  if (d.rating) tags.push({ label: "Rating", value: d.rating });
 
-  detail.appendChild(scoree);
+  tags.forEach((t) => {
+    const tag = document.createElement("span");
+    tag.className = "detail-tag";
+    tag.innerHTML = `<strong>${t.label}:</strong> ${t.value}`;
+    metaGrid.appendChild(tag);
+  });
 
-  detail.appendChild(synopsis);
+  // Genres
+  const genres = document.createElement("div");
+  genres.className = "detail-genres";
+  if (d.genres) {
+    d.genres.forEach((g) => {
+      const badge = document.createElement("span");
+      badge.className = "genre-badge";
+      badge.textContent = g.name;
+      genres.appendChild(badge);
+    });
+  }
 
-  detail.appendChild(episodes);
+  // Synopsis
+  const synopsisLabel = document.createElement("div");
+  synopsisLabel.className = "detail-synopsis-label";
+  synopsisLabel.textContent = "Synopsis";
 
-  detail.appendChild(type);
-  details.appendChild(detail);
+  const synopsis = document.createElement("div");
+  synopsis.className = "detail-synopsis";
+  synopsis.textContent = d.synopsis || "No synopsis available.";
+
+  info.appendChild(title);
+  info.appendChild(metaGrid);
+  info.appendChild(genres);
+  info.appendChild(synopsisLabel);
+  info.appendChild(synopsis);
+
+  card.appendChild(info);
+  card.appendChild(cover);
+
+  detailsContainer.appendChild(card);
 }
+
 fetchAnime().then(renderAnime);

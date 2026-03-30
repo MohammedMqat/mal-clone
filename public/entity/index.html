@@ -3,10 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/shared.css" />
     <link rel="stylesheet" href="/entity/style.css" />
+    <title>Details - Anime Showcase</title>
   </head>
   <body>
-    <div id="anime-details-container"></div>
+    <div class="search-bar-wrapper">
+      <form class="search-bar" id="search-form">
+        <select id="type">
+          <option value="anime">Anime</option>
+          <option value="manga">Manga</option>
+        </select>
+        <input type="text" id="text" name="q" placeholder="Search anime or manga..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div id="anime-details-container">
+      <p class="loading-text">Loading details...</p>
+    </div>
+
     <script src="/entity/app.js"></script>
   </body>
 </html>

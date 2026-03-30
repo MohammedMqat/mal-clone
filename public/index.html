@@ -3,18 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>Anime Showcase</title>
   </head>
   <body>
+    <div class="nav-brand">
+      <h1>Anime Showcase</h1>
+      <p>Discover top anime and manga</p>
+    </div>
+
+    <div class="search-bar-wrapper">
+      <form class="search-bar" id="search-form">
+        <select id="type">
+          <option value="anime">Anime</option>
+          <option value="manga">Manga</option>
+        </select>
+        <input type="text" id="text" name="q" placeholder="Search anime or manga..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
     <section>
-      <h1>Top Anime</h1>
-      <div id="anime-container"></div>
+      <h2 class="section-title">Top Anime</h2>
+      <div class="horizontal-scroll" id="anime-container">
+        <p class="loading-text">Loading...</p>
+      </div>
     </section>
+
     <section>
-      <h1>Top Manga</h1>
-      <div id="manga-container"></div>
+      <h2 class="section-title">Top Manga</h2>
+      <div class="horizontal-scroll" id="manga-container">
+        <p class="loading-text">Loading...</p>
+      </div>
     </section>
+
     <script src="./app.js"></script>
   </body>
 </html>

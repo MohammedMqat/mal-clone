@@ -1,6 +1,24 @@
-form {
+/* Homepage-specific styles */
+
+.horizontal-scroll {
   display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 0 24px 20px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 24px;
+  -webkit-overflow-scrolling: touch;
 }
-.card:hover {
-  cursor: pointer;
+
+.horizontal-scroll .card {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+}
+
+.horizontal-scroll .card img {
+  height: 260px;
+}
+
+.horizontal-scroll .card-synopsis {
+  max-height: 48px;
 }
