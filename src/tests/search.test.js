@@ -4,7 +4,7 @@ import { expect, vi, test } from "vitest";
 import onePieceSearchStub from "./stubs/search-one-piece.json";
 
 test("no query is provided", () => {
-  return request(app).get("/api/search").expect(400);
+  return request(app).get("/api/anime/search").expect(400);
 });
 
 test("search with valid query returns anime results", () => {
@@ -21,7 +21,7 @@ test("search with valid query returns anime results", () => {
         }),
     }),
   );
-  return request(app).get("/api/search?q=naruto").expect(200);
+  return request(app).get("/api/anime/search?q=naruto").expect(200);
 });
 
 test("search returns results matching stub data", () => {
@@ -32,7 +32,7 @@ test("search returns results matching stub data", () => {
     }),
   );
   return request(app)
-    .get("/api/search?q=onepiece")
+    .get("/api/anime/search?q=onepiece")
     .expect("content-Type", /json/)
     .expect(200)
     .expect((res) => {
@@ -47,5 +47,5 @@ test("search returns 429 when Jikan is rate limited", () => {
       json: () => Promise.resolve({ message: "rate limited" }),
     }),
   );
-  return request(app).get("/api/search?q=some-random-anime-we-didnt-use-before").expect(429);
+  return request(app).get("/api/anime/search?q=some-random-anime-we-didnt-use-before").expect(429);
 });
