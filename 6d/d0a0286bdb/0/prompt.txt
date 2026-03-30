@@ -7,3 +7,7 @@ in @public/search/index.html add a dropdon to choose manga or anime
 ---
 
 yes
+
+---
+
+commit
