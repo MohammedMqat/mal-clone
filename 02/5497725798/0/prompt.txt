@@ -1,0 +1,6 @@
+Make it pretty
+Dark mode, i dont want pitch black, i want firefox logo color scheme for main color, cards should contain name, scrollable synopsis, rating, number of episodes 
+Use shared stylesheet for the sharable stuff, any specific classes should be in the relative style.css
+Top page should have a horizontal scroll for each category
+Search should be a long bar at the center top, not full width, should also exist in all pages
+Details page should have the anime cover on the right with details on left, like a big card
