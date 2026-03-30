@@ -1,0 +1,173 @@
+gudie me
+
+---
+
+u mean add &{entityType} there
+
+---
+
+either mange or anime
+
+---
+
+anime and manga
+
+---
+
+guide me
+
+---
+
+done
+
+---
+
+Done
+
+---
+
+yes
+
+---
+
+i change name to entity from anime
+where does i need to change name on other files
+
+---
+
+as i said i change anime folder name to entity so stop adding it and 
+i complete all changes for paths from anime to entity 
+go check them
+
+---
+
+check again
+
+---
+
+guide me
+
+---
+
+done know
+
+---
+
+guide me
+
+---
+
+i didnt mean done
+i mean dont
+
+---
+
+done
+
+---
+
+done
+
+---
+
+done
+
+---
+
+if or swwitch i guess
+
+---
+
+if (entityType === "anime")
+
+---
+
+data.data.episode }else{
+data.data.chapters
+
+---
+
+episodes.textContent = data.data.episodes}else{
+manga.tesxtContent= data.data.chapters
+
+---
+
+if (entityType === "anime") {
+❯   episodes.textContent = data.data.episodes}else{
+episodes.tesxtContent= data.data.chapters
+
+---
+
+read file
+
+---
+
+Uncaught (in promise) TypeError: can't access property "forEach", data.data is undefined
+
+---
+
+The error is data.data is undefined — which means renderAnime received something, but it
+  didn't have a .data array inside it.
+
+  Question 1: Look at public/app.js line 4. What URL is it fetching?
+
+  Question 2: Now look at src/router.js line 16. What does that route expect the URL to look
+  like?
+
+  Question 3: The controller at src/controllers/top-anime.js lines 2–5 checks entityType. What
+  would entityType be when the frontend calls /api/entity/top? Is that in the allowed list?
+
+  Think through those three questions — what do you notice?
+
+---
+
+Uncaught (in promise) TypeError: can't access property "forEach", data.data is undefined
+    renderAnime http://localhost:9080/app.js:7
+    promise callback* http://localhost:9080/app.js:2
+app.js:7:3
+    renderAnime http://localhost:9080/app.js:7
+    (Async: promise callback)
+    <anonymous> http://localhost:9080/app.js:2
+
+---
+
+const container = document.getElementById("container");
+fetchAnime().then(renderAnime);
+function fetchAnime() {
+  return fetch(`/api/entity/top`).then((response) => response.json());
+}
+function renderAnime(data) {
+  data.data.forEach((element) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    const img = document.createElement("img");
+    img.src = element.images.jpg.image_url;
+
+    card.addEventListener("click", () => {
+      window.location.href = `/entity/${element.mal_id}`;
+    });
+    const p = document.createElement("p");
+    p.textContent = element.title;
+
+    const score = document.createElement("p");
+    score.textContent = element.score;
+
+    card.appendChild(img);
+    card.appendChild(p);
+    card.appendChild(score);
+
+    container.appendChild(card);
+  });
+}
+
+i mean i type entity
+
+---
+
+The script from “http://localhost:9080/manga/app.js” was loaded even though its MIME type (“text/html”) is not a valid JavaScript MIME type. 1
+The stylesheet http://localhost:9080/manga/style.css was not loaded because its MIME type, “text/html”, is not “text/css”. 1
+Uncaught SyntaxError: expected expression, got '<' app.js:1:1
+
+---
+
+relative
