@@ -1,0 +1,27 @@
+{
+  "cli_version": "0.5.1",
+  "checkpoint_id": "6dd0a0286bdb",
+  "strategy": "manual-commit",
+  "branch": "feat/manga",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "public/search/app.js",
+    "public/search/index.html",
+    "src/router.js"
+  ],
+  "sessions": [
+    {
+      "metadata": "/6d/d0a0286bdb/0/metadata.json",
+      "transcript": "/6d/d0a0286bdb/0/full.jsonl",
+      "content_hash": "/6d/d0a0286bdb/0/content_hash.txt",
+      "prompt": "/6d/d0a0286bdb/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 30,
+    "cache_creation_tokens": 25840,
+    "cache_read_tokens": 507432,
+    "output_tokens": 6295,
+    "api_call_count": 22
+  }
+}

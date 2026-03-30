@@ -1,0 +1,9 @@
+in @public/index.html add a dropdon to choose manga or anime
+
+---
+
+in @public/search/index.html add a dropdon to choose manga or anime
+
+---
+
+yes
