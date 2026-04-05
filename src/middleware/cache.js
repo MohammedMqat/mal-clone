@@ -7,7 +7,7 @@ const cache = new LRUCache({
 
 export const cacheMiddleware = (req, res, next) => {
   const cacheKey = `${req.method}:${req.url}`;
-
+  // console.debug(cacheKey, "cached:", cache.has(cacheKey));
   if (cache.has(cacheKey)) {
     const { data } = cache.get(cacheKey);
     return res.json(data);

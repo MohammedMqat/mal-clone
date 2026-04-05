@@ -1,9 +1,5 @@
-const container = document.getElementById("container");
-fetchAnime().then(renderAnime);
-function fetchAnime() {
-  return fetch(`/api/top-anime`).then((response) => response.json());
-}
-function renderAnime(data) {
+function render(data, entityType) {
+  const container = document.getElementById(`${entityType}-container`);
   data.data.forEach((element) => {
     const card = document.createElement("div");
     card.className = "card";
@@ -11,7 +7,7 @@ function renderAnime(data) {
     img.src = element.images.jpg.image_url;
 
     card.addEventListener("click", () => {
-      window.location.href = `/anime/${element.mal_id}`;
+      window.location.href = `/${entityType}/${element.mal_id}`;
     });
     const p = document.createElement("p");
     p.textContent = element.title;
@@ -26,3 +22,14 @@ function renderAnime(data) {
     container.appendChild(card);
   });
 }
+
+function fetchPage() {
+  fetch(`/api/anime/top`)
+    .then((response) => response.json())
+    .then((data) => render(data, "anime"))
+    .then(() => fetch(`/api/manga/top`))
+    .then((response) => response.json())
+    .then((data) => render(data, "manga"));
+}
+
+fetchPage();

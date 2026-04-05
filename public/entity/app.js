@@ -1,11 +1,13 @@
 const details = document.getElementById("anime-details-container");
 
 const id = window.location.pathname.split("/")[2];
+const entityType = window.location.pathname.split("/")[1];
 
 function fetchAnime() {
-  return fetch(`/api/anime-details/${encodeURIComponent(id)}`).then((response) => response.json());
+  return fetch(`/api/${entityType}/${encodeURIComponent(id)}`).then((response) => response.json());
 }
 function renderAnime(data) {
+  console.log(data);
   const detail = document.createElement("div");
   const image = document.createElement("img");
   const title = document.createElement("h1");
@@ -19,7 +21,11 @@ function renderAnime(data) {
 
   synopsis.textContent = data.data.synopsis;
 
-  episodes.textContent = data.data.episodes;
+  if (entityType === "anime") {
+    episodes.textContent = data.data.episodes;
+  } else {
+    episodes.textContent = data.data.chapters;
+  }
   type.textContent = data.data.type;
 
   detail.appendChild(image);
