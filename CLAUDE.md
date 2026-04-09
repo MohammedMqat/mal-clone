@@ -9,6 +9,7 @@
 
 ## Project: Anime Showcase & Search
 
+
 ### Goal
 
 Build a 3-page anime app served by Express using static HTML/JS/CSS files.
