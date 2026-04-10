@@ -1,0 +1,1 @@
+add test guidance in calude md
