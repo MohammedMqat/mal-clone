@@ -31,9 +31,11 @@
   },
   "dependencies": {
     "express": "^5.2.1",
-    "lru-cache": "^11.2.7"
+    "lru-cache": "^11.2.7",
+    "postgres": "^3.4.9"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.4.4",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "oxfmt": "^0.41.0",
