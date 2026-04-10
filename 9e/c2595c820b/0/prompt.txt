@@ -8,3 +8,11 @@ save progress using entire
 ---
 
 /teach off
+
+---
+
+commit
+
+---
+
+commit ith --no-verify
