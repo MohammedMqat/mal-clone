@@ -1,12 +1,12 @@
 # Week 6+7 TODO — PostgreSQL, Auth, Favorites, Testing
 
 ## Phase 1 — Database Foundation (Week 6)
-- [ ] 1. Set up PostgreSQL locally and create the project database
+- [x] 1. Set up PostgreSQL locally and create the project database
 - [ ] 2. Design schema: `users` table and `favorites` table (with `entity_type` column to distinguish anime vs manga) with foreign key relationship
 - [ ] 3. Write `db/build.sql` with CREATE TABLE statements
 - [ ] 4. Write `db/build.js` build script to initialize the database
-- [ ] 5. Connect Express to PostgreSQL using the `pg` module
-- [ ] 6. Use parameterized queries (`$1, $2`) in all database queries
+- [x] 5. Connect Express to PostgreSQL using the `Postgres.js` module
+- [x] 6. Use parameterized queries (`$1, $2`) in all database queries
 
 ## Phase 2 — Authentication (Week 7)
 - [ ] 7. Create `POST /api/register` — validate inputs, hash password with bcrypt, INSERT into users
@@ -23,7 +23,7 @@
 - [ ] 16. Build a "My Favorites" page to display saved anime/manga
 
 ## Phase 4 — Testing (Week 6 + 7)
-- [ ] 17. Set up a separate test database
-- [ ] 18. Test database queries (INSERT, SELECT, DELETE for users and favorites)
-- [ ] 19. Test auth routes (register, login, invalid credentials)
-- [ ] 20. Test protected routes (with and without valid session)
+- [x] 17. Set up a separate test database
+- [x] 18. Test database queries (INSERT, SELECT, DELETE for users and favorites)
+- [x] 19. Test auth routes (register, login, invalid credentials)
+- [x] 20. Test protected routes (with and without valid session)
