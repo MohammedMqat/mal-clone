@@ -1,0 +1,10 @@
+/teach @docs/plans/week-6-7-todo.md lets finish phase 1
+parametarized queryies are irrlevant because we install postgress.js
+
+---
+
+save progress using entire
+
+---
+
+/teach off
