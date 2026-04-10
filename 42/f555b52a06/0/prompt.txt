@@ -1,0 +1,45 @@
+read all files
+
+---
+
+So i finised learning those subject 
+https://github.com/GSG-CA/curriculum/blob/main/coursebook/week-6/README.md
+and 
+https://github.com/GSG-CA/curriculum/blob/main/coursebook/week-7/README.md
+read them first and thinks all things we can apply on this project
+
+---
+
+make them as TO DO list priority
+
+---
+
+save them in your memory
+
+---
+
+where did u save them
+
+---
+
+i mean there is a claude md file
+
+---
+
+yes
+
+---
+
+read userstories and check what we can add to it depends on week6+7
+
+---
+
+when u talk about mal_id when need to specifc if its for manga or anime
+
+---
+
+yes
+
+---
+
+I dont want this data in claude.md, should be in docs/plans/<file>.md
