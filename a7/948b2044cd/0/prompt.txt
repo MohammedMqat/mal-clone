@@ -1,0 +1,10 @@
+Trim the teach mode parts of the claude md, reorganize into multiple files if needed,
+  keep claude md as proper context you'd want in every conversation
+
+---
+
+I would like to keep the student progress in docs/student progress for when i use teach mode
+
+---
+
+commit
