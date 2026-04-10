@@ -1,0 +1,10 @@
+@docs/plans/week-6-7-todo.md Think about tests and write them for backend only, suppose that the database is setup already
+The current tests are not of the highest quality, i want to learn how to do those properly
+
+---
+
+read claude md again, there's updated guidance about writing tests and using db in tests
+
+---
+
+commit
