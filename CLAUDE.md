@@ -29,14 +29,19 @@ src/
   app.js            ← Express app, serves public/ via express.static
   server.js         ← starts server on port 9080
   router.js         ← API routes + manual route for /anime/:id
+  db.js             ← exports db.sql tagged template (postgres.js in prod, PGlite in test)
+  schema.sql        ← database schema (users table)
   controllers/
     top-anime.js
     anime-search.js
     anime-details.js
   tests/
+    setup.js        ← global test setup (PGlite per test, schema, seed)
     search.test.js
+    db.test.js
     stubs/
       search-one-piece.json
+vitest.config.js    ← wires setup.js for all tests
 ```
 
 ## Tech Constraints
@@ -73,11 +78,24 @@ Response shape:
 ## Tests
 
 - Framework: Vitest + supertest
+- Global setup: `src/tests/setup.js` (configured in `vitest.config.js`)
 - Stubs in `src/tests/stubs/` (real Jikan response shapes)
-- Mock pattern: `vi.stubGlobal("fetch", () => Promise.resolve({ json: () => Promise.resolve(stub) }))`
-- Import stubs: `import stub from "./stubs/search-one-piece.json" with { type: "json" }`
 - Test names describe user behavior, not implementation
 - Each test validates: status code, content type, response body shape
+
+### Database in tests
+
+- Each test gets a fresh in-memory PostgreSQL via [PGlite](https://pglite.dev/)
+- `src/tests/setup.js` handles `beforeEach`/`afterEach`: creates PGlite instance, runs `src/schema.sql`, seeds a test user (`testuser` / `hashed_password_123`), and swaps `db.sql` to a PGlite-backed wrapper
+- Controllers use `db.sql` tagged template — same interface in prod (postgres.js) and test (PGlite wrapper)
+- **Never mock `db.sql`** — queries run against real SQL in PGlite
+- To add tables: update `src/schema.sql`, they'll be created automatically each test
+
+### Mocking external APIs
+
+- **Only mock external HTTP calls** (Jikan API), never database calls
+- Mock pattern: `vi.stubGlobal("fetch", () => Promise.resolve({ ok: true, json: () => Promise.resolve(stub) }))`
+- Import stubs: `import stub from "./stubs/search-one-piece.json" with { type: "json" }`
 - No external API calls in tests — always mock fetch
 
 ## Remaining Work
