@@ -28,7 +28,6 @@ beforeEach(async () => {
     "hashed_password_123",
   ]);
 });
-
 afterEach(async () => {
   await pglite.close();
 });

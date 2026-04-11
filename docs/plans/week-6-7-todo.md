@@ -2,9 +2,9 @@
 
 ## Phase 1 — Database Foundation (Week 6)
 - [x] 1. Set up PostgreSQL locally and create the project database
-- [ ] 2. Design schema: `users` table and `favorites` table (with `entity_type` column to distinguish anime vs manga) with foreign key relationship
-- [ ] 3. Write `db/build.sql` with CREATE TABLE statements
-- [ ] 4. Write `db/build.js` build script to initialize the database
+- [x] 2. Design schema: `users` table and `favorites` table (with `entity_type` column to distinguish anime vs manga) with foreign key relationship
+- [x] 3. Write `db/build.sql` with CREATE TABLE statements
+- [x] 4. Write `db/build.js` build script to initialize the database
 - [x] 5. Connect Express to PostgreSQL using the `Postgres.js` module
 - [x] 6. Use parameterized queries (`$1, $2`) in all database queries
 
