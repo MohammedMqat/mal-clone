@@ -10,7 +10,8 @@
 - [x] Proxy pattern on all pages — frontend never calls Jikan directly
 - [x] Detail page — reads `id` from URL, fetches `/api/anime-details/:id`, renders title, image, score, synopsis, episodes, type
 - [x] Basic supertest test passing (`search with valid query returns 200`)
-- [x] Error handling with `.catch()` on all 3 controllers
+- [x] E❯ /teach @docs/plans/week-6-7-todo.md lets finish phase 1
+parametarized queryies are irrlevant because we install postgress.jsrror handling with `.catch()` on all 3 controllers
 - [x] kebab-case routes (`/api/top-anime`, `/api/search`, `/api/anime-details/:id`)
 - [x] `cursor: pointer` on card hover for home and search pages
 - [x] URL encoding with `encodeURIComponent` on search and detail pages
