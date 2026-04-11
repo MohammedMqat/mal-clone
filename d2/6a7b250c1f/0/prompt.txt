@@ -1,0 +1,52 @@
+already installed bcrypt 
+u can check 
+and lets seperate files its better for refactoring project 
+so lets make auth.js
+
+---
+
+but jwt is better right ?
+
+---
+
+but jwt is better right ?
+
+---
+
+lets go for jwt for noww
+
+---
+
+guide me
+
+---
+
+where is .env
+
+---
+
+guide me again
+
+---
+
+done
+
+---
+
+DATABASE_URL=postgres://your_user:your_password@localhost:5432/your_db_name depends on my project My anime list check what the link should be
+
+---
+
+done
+
+---
+
+Failed to start postgresql.service: Unit postgresql.service not found.
+
+---
+
+So read files and check
+
+---
+
+commit and push
