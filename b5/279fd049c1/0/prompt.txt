@@ -1,0 +1,79 @@
+/teach @docs/plans/week-6-7-todo.md lets finish phase 1
+parametarized queryies are irrlevant because we install postgress.js
+
+---
+
+save progress using entire
+
+---
+
+/teach off
+
+---
+
+commit
+
+---
+
+commit ith --no-verify
+
+---
+
+❯ /teach @docs/plans/week-6-7-todo.md lets finish phase 1
+parametarized queryies are irrlevant because we install postgress.js
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+done
+
+---
+
+done
+
+---
+
+Your db/build.js needs to do something very similar
+
+---
+
+sql: postgres(process.env.DATABASE_URL),
+
+---
+
+no database need to be running all the time when site is working
+
+---
+
+check
+
+---
+
+its my first time building this type of dps so guide me
+
+---
+
+check
+
+---
+
+cehck
+
+---
+
+done
+
+---
+
+list all changes we made and explain them

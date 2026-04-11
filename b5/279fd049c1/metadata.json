@@ -1,0 +1,27 @@
+{
+  "cli_version": "0.5.2",
+  "checkpoint_id": "b5279fd049c1",
+  "strategy": "manual-commit",
+  "branch": "week-6-7",
+  "checkpoints_count": 14,
+  "files_touched": [
+    "docs/plans/week-6-7-todo.md",
+    "src/schema.sql",
+    "src/tests/setup.js"
+  ],
+  "sessions": [
+    {
+      "metadata": "/b5/279fd049c1/0/metadata.json",
+      "transcript": "/b5/279fd049c1/0/full.jsonl",
+      "content_hash": "/b5/279fd049c1/0/content_hash.txt",
+      "prompt": "/b5/279fd049c1/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 87,
+    "cache_creation_tokens": 55376,
+    "cache_read_tokens": 1426781,
+    "output_tokens": 10233,
+    "api_call_count": 47
+  }
+}
