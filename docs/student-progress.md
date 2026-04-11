@@ -10,8 +10,7 @@
 - [x] Proxy pattern on all pages — frontend never calls Jikan directly
 - [x] Detail page — reads `id` from URL, fetches `/api/anime-details/:id`, renders title, image, score, synopsis, episodes, type
 - [x] Basic supertest test passing (`search with valid query returns 200`)
-- [x] E❯ /teach @docs/plans/week-6-7-todo.md lets finish phase 1
-parametarized queryies are irrlevant because we install postgress.jsrror handling with `.catch()` on all 3 controllers
+- [x] Error handling with `.catch()` on all 3 controllers
 - [x] kebab-case routes (`/api/top-anime`, `/api/search`, `/api/anime-details/:id`)
 - [x] `cursor: pointer` on card hover for home and search pages
 - [x] URL encoding with `encodeURIComponent` on search and detail pages
@@ -34,15 +33,24 @@ parametarized queryies are irrlevant because we install postgress.jsrror handlin
 - [x] Added caching middleware (`src/middleware/cache.js`)
 - [x] Refactored routes to use `:entityType` parameter pattern
 
-### In Progress — Phase 1 remaining
+### Phase 1 — Complete
 
-- [ ] Add `favorites` table to `src/schema.sql` (needs: id, user_id FK, entity_id, entity_type with CHECK, title, created_at)
-- [ ] Create `db/build.js` script to initialize the real database from schema
+- [x] `favorites` table added to `src/schema.sql` (id, user_id FK, entity_id, entity_type CHECK, title)
+- [x] `db/build.js` build script created
+
+### Phase 2 — In Progress
+
+- [x] Installed `jsonwebtoken`, `cookie-parser`; updated `package.json` scripts with `--env-file=.env`
+- [x] Created `.env` with `JWT_SECRET` (gitignored)
+- [ ] PostgreSQL server not yet running locally (needs `sudo pacman -S postgresql` + init)
+- [ ] Add `express.json()` + `cookieParser()` to `src/app.js`
+- [ ] Create `src/controllers/auth.js` (register + login)
+- [ ] Add auth routes to `src/router.js`
+- [ ] Create `src/middleware/auth.js` (JWT verify)
 
 ### Not started
 
-- [ ] Implement auth routes (register, login) + auth middleware
-- [ ] Implement favorites controller routes (GET, POST, DELETE)
+- [ ] Favorites controller routes (GET, POST, DELETE)
 - [ ] "Save to favorites" button on detail page
 - [ ] "My Favorites" page
 - [ ] CSS styling for all 3 pages
