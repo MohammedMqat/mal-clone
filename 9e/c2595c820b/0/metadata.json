@@ -1,0 +1,36 @@
+{
+  "cli_version": "0.5.2",
+  "checkpoint_id": "9ec2595c820b",
+  "session_id": "7d4015b9-b044-48e5-86c3-3e3443af8564",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-10T20:49:37.533651676Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "docs/student-progress.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-6",
+  "turn_id": "a9ca8fe1fbd7",
+  "checkpoint_transcript_start": 27,
+  "transcript_lines_at_start": 27,
+  "token_usage": {
+    "input_tokens": 19,
+    "cache_creation_tokens": 19214,
+    "cache_read_tokens": 266141,
+    "output_tokens": 3599,
+    "api_call_count": 11
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-10T20:49:37.461048767Z",
+    "agent_lines": 29,
+    "human_added": 7,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 36,
+    "agent_percentage": 80.55555555555556
+  }
+}

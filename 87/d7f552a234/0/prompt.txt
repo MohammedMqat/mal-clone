@@ -1,0 +1,10 @@
+read project files
+
+---
+
+SO after that i learned 
+github.com/GSG-CA/curriculum/blob/main/coursebook/week-6/README.md
+and 
+https://github.com/GSG-CA/curriculum/blob/main/coursebook/week-7/README.md
+and i want to implement them in this project 
+check what to do

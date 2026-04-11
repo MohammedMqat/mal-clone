@@ -1,0 +1,9 @@
+I want to setup database for testing, it needs to be a postgres in memory for fast teardown and setup, on each test i should be setting up the database with users, and only expect myself to mock external calls (Jikan api) not db.query calls, ignore current code, stash it away for now, i'll ask the other agent to adapt to your changes
+
+---
+
+If we do the mock, can we replace it then with the pglite? how would that hinder the experience or code, i like your approach seamless ness , but it feels off
+
+---
+
+yes
