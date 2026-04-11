@@ -1,0 +1,2 @@
+read search.test.js 
+and fix those tests depends on other tests files
