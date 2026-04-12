@@ -88,3 +88,7 @@ commit the morgan changes too, use chunk git add
 ---
 
 commit the morgan changes too, use git add that adds specific lines
+
+---
+
+commit the last bit of changes
