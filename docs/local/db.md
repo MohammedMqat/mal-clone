@@ -12,13 +12,6 @@ docker run -d \
   postgres
 ```
 
-If a container already exists without a port mapping, recreate it:
-
-```bash
-docker rm -f mal-clone-db
-docker run -d --name mal-clone-db -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres
-```
-
 ## Initialize the database
 
 ```bash
