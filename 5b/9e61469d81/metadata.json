@@ -3,7 +3,7 @@
   "checkpoint_id": "5b9e61469d81",
   "strategy": "manual-commit",
   "branch": "week-6-7",
-  "checkpoints_count": 14,
+  "checkpoints_count": 15,
   "files_touched": [
     "src/controllers/auth.js",
     "src/router.js",
@@ -16,13 +16,19 @@
       "transcript": "/5b/9e61469d81/0/full.jsonl",
       "content_hash": "/5b/9e61469d81/0/content_hash.txt",
       "prompt": "/5b/9e61469d81/0/prompt.txt"
+    },
+    {
+      "metadata": "/5b/9e61469d81/1/metadata.json",
+      "transcript": "/5b/9e61469d81/1/full.jsonl",
+      "content_hash": "/5b/9e61469d81/1/content_hash.txt",
+      "prompt": "/5b/9e61469d81/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 115,
-    "cache_creation_tokens": 22803,
-    "cache_read_tokens": 3807559,
-    "output_tokens": 8479,
-    "api_call_count": 40
+    "input_tokens": 123,
+    "cache_creation_tokens": 30871,
+    "cache_read_tokens": 3870196,
+    "output_tokens": 9629,
+    "api_call_count": 43
   }
 }
