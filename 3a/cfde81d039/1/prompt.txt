@@ -1,0 +1,74 @@
+add in schema.sql create db and user
+
+---
+
+how
+
+---
+
+permission denied to create role
+DETAIL:  Only roles with the CREATEROLE attribute may create roles.
+isnt mal_user owner of mal_clone
+
+---
+
+i dont wawnt to create new roles that as me failing create table commadns
+
+---
+
+mal user has to be the owner
+
+---
+
+mal user has to be the owner, it already exists
+
+---
+
+do it as a npm
+
+---
+
+um, i am using docker for the db container
+
+---
+
+week-5-project-express week-6-7  ? ✗ npm run db:setup
+
+> week-5-project-express@1.0.0 db:setup
+> npm run db:init && npm run db:build
+
+
+> week-5-project-express@1.0.0 db:init
+> docker exec -i mal-clone-db psql -U postgres < db/init.sql
+
+CREATE ROLE
+CREATE DATABASE
+
+> week-5-project-express@1.0.0 db:build
+> node --env-file=.env db/build.js
+
+AggregateError [ECONNREFUSED]:
+    at internalConnectMultiple (node:net:1193:18)
+    at afterConnectMultiple (node:net:1783:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:5432
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 5432
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:5432
+        at createConnectionError (node:net:1746:14)
+        at afterConnectMultiple (node:net:1776:16) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 5432
+    }
+  ]
+}
