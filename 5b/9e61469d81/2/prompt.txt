@@ -1,0 +1,10 @@
+fix 
+const user = rows[0];
+    return bcrypt.compare(password, user.password_hash).then((isMatch) =>
+   {
+      if (!isMatch) {
+        return res.status(401).json({ message: "invalid credentials" });
+      }
+      // If we get here, login is valid — now we sign a JWT
+    });
+  })
