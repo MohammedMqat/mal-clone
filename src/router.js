@@ -1,5 +1,5 @@
 import path from "path";
-
+import { register, login } from "./controllers/auth.js";
 import { searchAnime } from "./controllers/anime-search.js";
 import express from "express";
 import { TopAnime } from "./controllers/top-anime.js";
@@ -14,7 +14,8 @@ router.get("/search/:entityType", (req, res) => {
 router.get("/:entityType/:id", (req, res) => {
   res.sendFile(path.join(import.meta.dirname, "..", "public", "entity", "index.html"));
 });
-
+router.post("/api/auth/register", register);
+router.post("/api/auth/login", login);
 router.use(cacheMiddleware); // This line caches whats after only
 
 router.get("/api/:entityType/top", TopAnime);

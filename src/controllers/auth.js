@@ -24,3 +24,31 @@ export function register(req, res) {
                 message: "500 Internal Server Error"
             });
         })}
+
+export function login(req, res) {
+    const { username, password } = req.body;
+    if (!password) {
+        return res.status(400).json({ message: "password is missing" });
+
+    }
+
+
+    db.sql`SELECT * FROM users WHERE username = ${username}`
+        .then((rows) => {
+            if (rows.length === 0) {
+                return res.status(401).json({ message: "invalid credentials" });
+            }
+            const user = rows[0];
+            return bcrypt.compare(password, user.password_hash).then((isMatch) => {
+                if (!isMatch) {
+                    return res.status(401).json({ message: "invalid credentials" });
+                }
+                const token = jwt.sign({ username: user.username }, process.env.JWT_SECRET);
+                res.cookie("token", token, { httpOnly: true });
+                return res.status(200).json({ username: user.username });
+            });
+        })
+        .catch((err) => {
+            return res.status(500).json({ message: "500 Internal Server Error" });
+        });
+}
