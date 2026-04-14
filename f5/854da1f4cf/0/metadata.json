@@ -1,0 +1,44 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "f5854da1f4cf",
+  "session_id": "7d4015b9-b044-48e5-86c3-3e3443af8564",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-14T18:34:10.173183684Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 1,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-6[1m]",
+  "turn_id": "9f61e6c36f8e",
+  "token_usage": {
+    "input_tokens": 608,
+    "cache_creation_tokens": 577215,
+    "cache_read_tokens": 17005972,
+    "output_tokens": 46341,
+    "api_call_count": 235
+  },
+  "session_metrics": {
+    "turn_count": 31
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 213,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 67,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 15,
+        "openapi/yaak.fl_BRkyGicxcL.yaml": 13,
+        "openapi/yaak.fl_Z2X9NDrM7W.yaml": 13,
+        "openapi/yaak.rq_DpZSxGbpST.yaml": 27,
+        "openapi/yaak.rq_QAfe5vuYAz.yaml": 28,
+        "openapi/yaak.rq_ZMjVvC2kW7.yaml": 18,
+        "openapi/yaak.rq_bSKurskTt2.yaml": 18,
+        "openapi/yaak.rq_kjtjhNci6z.yaml": 27,
+        "openapi/yaak.rq_uiA5Fu2pBt.yaml": 27,
+        "openapi/yaak.rq_zgw5gESabb.yaml": 27
+      }
+    }
+  ]
+}
