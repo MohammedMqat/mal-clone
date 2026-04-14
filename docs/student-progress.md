@@ -42,7 +42,6 @@
 
 - [x] Installed `jsonwebtoken`, `cookie-parser`; updated `package.json` scripts with `--env-file=.env`
 - [x] Created `.env` with `JWT_SECRET` (gitignored)
-- [ ] PostgreSQL server not yet running locally (needs `sudo pacman -S postgresql` + init)
 - [ ] Add `express.json()` + `cookieParser()` to `src/app.js`
 - [ ] Create `src/controllers/auth.js` (register + login)
 - [ ] Add auth routes to `src/router.js`
@@ -53,7 +52,6 @@
 - [ ] Favorites controller routes (GET, POST, DELETE)
 - [ ] "Save to favorites" button on detail page
 - [ ] "My Favorites" page
-- [ ] CSS styling for all 3 pages
 
 ## Understanding Checkpoints
 

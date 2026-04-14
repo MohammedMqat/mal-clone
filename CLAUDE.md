@@ -101,5 +101,3 @@ Response shape:
 ## Remaining Work
 
 - [ ] Caching on Express routes (avoid Jikan rate limits)
-- [ ] Unhappy path tests (rate limit simulation, invalid ID)
-- [ ] CSS styling for all 3 pages
