@@ -1,0 +1,27 @@
+type: http_request
+model: http_request
+id: rq_kjtjhNci6z
+createdAt: 2026-04-12T19:49:35.800140721
+updatedAt: 2026-04-14T18:00:33.971457952
+workspaceId: wk_43dKgKVATa
+folderId: fl_BRkyGicxcL
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+        "username": "amjad",
+      "password": "AAaa11!!"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: UxgqjwwD4G
+method: POST
+name: auth/register
+sortPriority: 1000.0
+url: http://localhost:9080/api/auth/register
+urlParameters: []

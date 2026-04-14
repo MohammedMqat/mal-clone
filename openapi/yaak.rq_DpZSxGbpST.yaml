@@ -1,0 +1,27 @@
+type: http_request
+model: http_request
+id: rq_DpZSxGbpST
+createdAt: 2026-04-12T20:40:57.235058386
+updatedAt: 2026-04-14T18:00:33.924781117
+workspaceId: wk_43dKgKVATa
+folderId: fl_BRkyGicxcL
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "username": "amjad",
+      "password": "AAaa11!!"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: UxgqjwwD4G
+method: POST
+name: auth/login
+sortPriority: 0.0
+url: http://localhost:9080/api/auth/login
+urlParameters: []
