@@ -1,0 +1,296 @@
+list what we have done for today
+
+---
+
+lets go for that
+
+---
+
+commit change
+
+---
+
+lets continue from middleare auth
+
+---
+
+done
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+done
+
+---
+
+done
+
+---
+
+done
+
+---
+
+yes
+
+---
+
+Check
+
+---
+
+check
+
+---
+
+guide me step by step
+
+---
+
+done
+
+---
+
+check
+
+---
+
+done
+
+---
+
+guide me step by step
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+done
+
+---
+
+done
+
+---
+
+done
+
+---
+
+done
+
+---
+
+guide me step by step
+
+---
+
+check
+
+---
+
+done
+
+---
+
+done
+
+---
+
+done
+
+---
+
+done
+
+---
+
+done
+
+---
+
+commit and push
+
+---
+
+next im usting yaak for testing my db 
+i wawnt to make tests for favourite
+
+---
+
+Commit
+
+---
+
+Whats on TO DO LIST
+
+---
+
+Remove 
+- Install PostgreSQL server locally (sudo pacman -S postgresql + initdb) — not blocking,
+  tests use PGlite
+Original backlog (from CLAUDE.md):
+  - Unhappy path tests (rate limit, invalid ID)
+- CSS styling for all pages
+
+---
+
+lets start
+
+---
+
+/teach
+
+---
+
+Guide me
+
+---
+
+5 tasks (0 done, 1 in progress, 4 open)
+  ◼ Build register page
+  ◻ Build login page
+  ◻ Add favorites button to detail page
+  ◻ Build My Favorites page
+  ◻ Add nav links between pages remove those from this screen
+
+---
+
+guide me step by step
+
+---
+
+<link rel="stylesheet" href="../shared.css" />
+
+---
+
+check
+
+---
+
+check
+
+---
+
+done
+
+---
+
+guide me step by step
+
+---
+
+guide me step by step
+
+---
+
+guide me step by step
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+done
+
+---
+
+done
+
+---
+
+[Image #1]
+
+---
+
+submitted
+
+---
+
+done
+
+---
+
+submitted mohamemedqawfq qwwewrq
+
+---
+
+confirme
+
+---
+
+check
+
+---
+
+check
+
+---
+
+guide me
+
+---
+
+check
+
+---
+
+done
+
+---
+
+check
+
+---
+
+check
+
+---
+
+Check
+
+---
+
+DOne
+
+---
+
+Done next phase
