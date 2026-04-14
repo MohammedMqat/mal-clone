@@ -1,17 +1,18 @@
 type: http_request
 model: http_request
-id: rq_DpZSxGbpST
-createdAt: 2026-04-12T20:40:57.235058386
-updatedAt: 2026-04-14T18:22:30.612367787
+id: rq_QAfe5vuYAz
+createdAt: 2026-04-14T18:25:10.992514939
+updatedAt: 2026-04-14T18:25:43.696544361
 workspaceId: wk_43dKgKVATa
-folderId: fl_BRkyGicxcL
+folderId: fl_Z2X9NDrM7W
 authentication: {}
 authenticationType: null
 body:
   text: |-
     {
-      "username": "amjad",
-      "password": "AAaa11!!"
+      "entity_id":21,
+      "entity_type":"anime",
+      "title":"One Piece"
     }
 bodyType: application/json
 description: ''
@@ -19,9 +20,9 @@ headers:
 - enabled: true
   name: Content-Type
   value: application/json
-  id: UxgqjwwD4G
+  id: jebed5Wwj8
 method: POST
-name: auth/login
+name: Add favorite
 sortPriority: 0.0
-url: http://localhost:9080/api/auth/login
+url: http://localhost:9080/api/favorites
 urlParameters: []

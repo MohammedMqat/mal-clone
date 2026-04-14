@@ -1,17 +1,17 @@
 type: http_request
 model: http_request
-id: rq_kjtjhNci6z
-createdAt: 2026-04-12T19:49:35.800140721
-updatedAt: 2026-04-14T18:22:30.658353144
+id: rq_uiA5Fu2pBt
+createdAt: 2026-04-14T18:20:27.826545433
+updatedAt: 2026-04-14T18:24:42.472346153
 workspaceId: wk_43dKgKVATa
-folderId: fl_BRkyGicxcL
+folderId: fl_Z2X9NDrM7W
 authentication: {}
 authenticationType: null
 body:
   text: |-
     {
-        "username": "amjad",
-      "password": "AAaa11!!"
+      "username":"yaakuser",
+      "password":"password123"
     }
 bodyType: application/json
 description: ''
@@ -19,9 +19,9 @@ headers:
 - enabled: true
   name: Content-Type
   value: application/json
-  id: UxgqjwwD4G
+  id: ZNMSh0m3MJ
 method: POST
-name: auth/register
+name: Register
 sortPriority: 1000.0
-url: http://localhost:9080/api/auth/register
+url: localhost:9080/api/auth/register
 urlParameters: []
