@@ -1,0 +1,21 @@
+What validate it is ?
+
+---
+
+nope
+
+---
+
+commit and push
+
+---
+
+Mentor here, check all the items in the todo and update progress, @docs/plans/week-6-7-todo.md + validation should include zod in serverside, and html validation in frontend
+
+---
+
+Mentor here, think whether zod validation should extend to do async validation of added parameters (anime id existing before passing into controller?)
+
+---
+
+synchronus zod validation, but add checks inside the controller for the validity of the inputs (you should already do that to fetch the title, not trust user input)
