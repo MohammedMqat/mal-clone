@@ -1,0 +1,53 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "a3f80ec57ba9",
+  "session_id": "6f5923b5-2363-4da1-b80d-d9d4dd7fb28c",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-17T20:37:49.20079658Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "docs/plans/week-6-7-todo.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-6[1m]",
+  "turn_id": "eb3e4795c130",
+  "token_usage": {
+    "input_tokens": 7,
+    "cache_creation_tokens": 7910,
+    "cache_read_tokens": 46652,
+    "output_tokens": 1850,
+    "api_call_count": 3
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-17T20:37:49.134187702Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 10,
+    "total_committed": 0,
+    "total_lines_changed": 10,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 31,
+      "user_lines_removed": 10,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "docs/plans/week-6-7-todo.md": 12
+      },
+      "user_removed_per_file": {
+        "docs/plans/week-6-7-todo.md": 10
+      }
+    }
+  ]
+}
