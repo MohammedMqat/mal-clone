@@ -6,11 +6,10 @@ export function requireAuth(req, res, next) {
     return res.status(401).json({ message: "unauthorized" });
   }
   try {
-  const payload = jwt.verify(token, process.env.JWT_SECRET);
-  req.user = payload;
-  next();
-} catch (err) {
-  return res.status(401).json({ message: "unauthorized" });
-}
-
+    const payload = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = payload;
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "unauthorized" });
+  }
 }

@@ -54,11 +54,11 @@ vitest.config.js    ← wires setup.js for all tests
 
 **Proxy pattern**: frontend never calls Jikan directly. All API calls go through the Express server.
 
-| Express route            | Jikan endpoint    |
-| ------------------------ | ----------------- |
-| `/api/top-anime`         | `GET /v4/top/anime` |
+| Express route            | Jikan endpoint            |
+| ------------------------ | ------------------------- |
+| `/api/top-anime`         | `GET /v4/top/anime`       |
 | `/api/search?q=...`      | `GET /v4/anime?q={query}` |
-| `/api/anime-details/:id` | `GET /v4/anime/{id}` |
+| `/api/anime-details/:id` | `GET /v4/anime/{id}`      |
 
 - Routes use kebab-case
 - Detail page URL: `/anime/:id` — Express serves `public/detail/index.html` via manual route in `router.js`
@@ -71,6 +71,7 @@ vitest.config.js    ← wires setup.js for all tests
 Base URL: `https://api.jikan.moe/v4`
 
 Response shape:
+
 - Top-level keys: `pagination`, `data`
 - Anime array at `response.data`
 - Each anime: `title`, `score`, `mal_id`, `images.jpg.image_url`

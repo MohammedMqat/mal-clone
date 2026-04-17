@@ -6,7 +6,8 @@ describe("users table", () => {
     return db.sql`SELECT * FROM users WHERE username = ${"testuser"}`.then((rows) => {
       expect(rows).toHaveLength(1);
       expect(rows[0].username).toBe("testuser");
-expect(rows[0].password_hash).toMatch(/^\$2/);    });
+      expect(rows[0].password_hash).toMatch(/^\$2/);
+    });
   });
 
   test("each test gets a fresh database with only the seed row", () => {

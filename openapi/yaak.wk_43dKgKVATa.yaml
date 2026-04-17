@@ -5,7 +5,7 @@ createdAt: 2026-04-14T17:59:07.504531591
 updatedAt: 2026-04-14T17:59:07.504547795
 authentication: {}
 authenticationType: null
-description: ''
+description: ""
 headers: []
 name: mal-clone
 encryptionKeyChallenge: null

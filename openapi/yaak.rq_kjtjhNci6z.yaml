@@ -14,12 +14,12 @@ body:
       "password": "AAaa11!!"
     }
 bodyType: application/json
-description: ''
+description: ""
 headers:
-- enabled: true
-  name: Content-Type
-  value: application/json
-  id: UxgqjwwD4G
+  - enabled: true
+    name: Content-Type
+    value: application/json
+    id: UxgqjwwD4G
 method: POST
 name: auth/register
 sortPriority: 1000.0

@@ -14,12 +14,12 @@ body:
       "password":"password123"
     }
 bodyType: application/json
-description: ''
+description: ""
 headers:
-- enabled: true
-  name: Content-Type
-  value: application/json
-  id: ZNMSh0m3MJ
+  - enabled: true
+    name: Content-Type
+    value: application/json
+    id: ZNMSh0m3MJ
 method: POST
 name: Register
 sortPriority: 1000.0

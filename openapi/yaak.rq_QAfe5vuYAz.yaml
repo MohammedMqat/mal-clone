@@ -15,12 +15,12 @@ body:
       "title":"One Piece"
     }
 bodyType: application/json
-description: ''
+description: ""
 headers:
-- enabled: true
-  name: Content-Type
-  value: application/json
-  id: jebed5Wwj8
+  - enabled: true
+    name: Content-Type
+    value: application/json
+    id: jebed5Wwj8
 method: POST
 name: Add favorite
 sortPriority: 0.0

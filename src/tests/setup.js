@@ -1,6 +1,6 @@
 import { PGlite } from "@electric-sql/pglite";
 import { db } from "../db.js";
-import bcrypt from "bcrypt"
+import bcrypt from "bcrypt";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { beforeEach, afterEach } from "vitest";
@@ -20,7 +20,7 @@ function createPgliteSql(pg) {
     return pg.query(text, values).then((r) => r.rows);
   };
 }
-  
+
 beforeEach(async () => {
   pglite = new PGlite();
   db.sql = createPgliteSql(pglite);

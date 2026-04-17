@@ -7,7 +7,7 @@ workspaceId: wk_43dKgKVATa
 folderId: null
 authentication: {}
 authenticationType: null
-description: ''
+description: ""
 headers: []
 name: auth
 sortPriority: 2000.0
