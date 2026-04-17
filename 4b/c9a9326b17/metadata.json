@@ -1,0 +1,45 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "4bc9a9326b17",
+  "strategy": "manual-commit",
+  "branch": "week-6-7",
+  "checkpoints_count": 11,
+  "files_touched": [
+    ".oxfmtrc.json",
+    "CLAUDE.md",
+    "db/build.js",
+    "docs/plans/week-6-7-todo.md",
+    "openapi/yaak.fl_BRkyGicxcL.yaml",
+    "openapi/yaak.fl_Z2X9NDrM7W.yaml",
+    "openapi/yaak.rq_DpZSxGbpST.yaml",
+    "openapi/yaak.rq_QAfe5vuYAz.yaml",
+    "openapi/yaak.rq_ZMjVvC2kW7.yaml",
+    "openapi/yaak.rq_bSKurskTt2.yaml",
+    "openapi/yaak.rq_kjtjhNci6z.yaml",
+    "openapi/yaak.rq_uiA5Fu2pBt.yaml",
+    "openapi/yaak.rq_zgw5gESabb.yaml",
+    "openapi/yaak.wk_43dKgKVATa.yaml",
+    "public/register/index.html",
+    "src/app.js",
+    "src/controllers/favorites.js",
+    "src/middleware/auth.js",
+    "src/router.js",
+    "src/tests/db.test.js",
+    "src/tests/setup.js"
+  ],
+  "sessions": [
+    {
+      "metadata": "/4b/c9a9326b17/0/metadata.json",
+      "transcript": "/4b/c9a9326b17/0/full.jsonl",
+      "content_hash": "/4b/c9a9326b17/0/content_hash.txt",
+      "prompt": "/4b/c9a9326b17/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 990,
+    "cache_creation_tokens": 964327,
+    "cache_read_tokens": 25466440,
+    "output_tokens": 78430,
+    "api_call_count": 364
+  }
+}

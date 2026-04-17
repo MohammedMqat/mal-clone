@@ -1,0 +1,256 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "4bc9a9326b17",
+  "session_id": "7d4015b9-b044-48e5-86c3-3e3443af8564",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-17T19:38:44.33573694Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 11,
+  "files_touched": [
+    ".oxfmtrc.json",
+    "CLAUDE.md",
+    "db/build.js",
+    "docs/plans/week-6-7-todo.md",
+    "openapi/yaak.fl_BRkyGicxcL.yaml",
+    "openapi/yaak.fl_Z2X9NDrM7W.yaml",
+    "openapi/yaak.rq_DpZSxGbpST.yaml",
+    "openapi/yaak.rq_QAfe5vuYAz.yaml",
+    "openapi/yaak.rq_ZMjVvC2kW7.yaml",
+    "openapi/yaak.rq_bSKurskTt2.yaml",
+    "openapi/yaak.rq_kjtjhNci6z.yaml",
+    "openapi/yaak.rq_uiA5Fu2pBt.yaml",
+    "openapi/yaak.rq_zgw5gESabb.yaml",
+    "openapi/yaak.wk_43dKgKVATa.yaml",
+    "public/register/index.html",
+    "src/app.js",
+    "src/controllers/favorites.js",
+    "src/middleware/auth.js",
+    "src/router.js",
+    "src/tests/db.test.js",
+    "src/tests/setup.js"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-6[1m]",
+  "turn_id": "21ba9632c5f7",
+  "token_usage": {
+    "input_tokens": 990,
+    "cache_creation_tokens": 964327,
+    "cache_read_tokens": 25466440,
+    "output_tokens": 78430,
+    "api_call_count": 364
+  },
+  "session_metrics": {
+    "turn_count": 87
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-17T19:38:43.264782478Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 1063,
+    "human_modified": 116,
+    "human_removed": 0,
+    "total_committed": 1063,
+    "total_lines_changed": 1179,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 221,
+      "user_lines_removed": 116,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        ".oxfmtrc.json": 1,
+        "CLAUDE.md": 5,
+        "db/build.js": 6,
+        "docs/plans/week-6-7-todo.md": 4,
+        "openapi/yaak.fl_BRkyGicxcL.yaml": 1,
+        "openapi/yaak.fl_Z2X9NDrM7W.yaml": 1,
+        "openapi/yaak.rq_DpZSxGbpST.yaml": 5,
+        "openapi/yaak.rq_QAfe5vuYAz.yaml": 5,
+        "openapi/yaak.rq_ZMjVvC2kW7.yaml": 1,
+        "openapi/yaak.rq_bSKurskTt2.yaml": 1,
+        "openapi/yaak.rq_kjtjhNci6z.yaml": 5,
+        "openapi/yaak.rq_uiA5Fu2pBt.yaml": 5,
+        "openapi/yaak.rq_zgw5gESabb.yaml": 5,
+        "openapi/yaak.wk_43dKgKVATa.yaml": 1,
+        "public/favorites/app.js": 26,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19,
+        "public/register/index.html": 12,
+        "src/app.js": 4,
+        "src/controllers/favorites.js": 40,
+        "src/middleware/auth.js": 6,
+        "src/router.js": 4,
+        "src/tests/db.test.js": 2,
+        "src/tests/setup.js": 2
+      },
+      "user_removed_per_file": {
+        ".oxfmtrc.json": 2,
+        "CLAUDE.md": 4,
+        "db/build.js": 5,
+        "openapi/yaak.fl_BRkyGicxcL.yaml": 1,
+        "openapi/yaak.fl_Z2X9NDrM7W.yaml": 1,
+        "openapi/yaak.rq_DpZSxGbpST.yaml": 5,
+        "openapi/yaak.rq_QAfe5vuYAz.yaml": 5,
+        "openapi/yaak.rq_ZMjVvC2kW7.yaml": 1,
+        "openapi/yaak.rq_bSKurskTt2.yaml": 1,
+        "openapi/yaak.rq_kjtjhNci6z.yaml": 5,
+        "openapi/yaak.rq_uiA5Fu2pBt.yaml": 5,
+        "openapi/yaak.rq_zgw5gESabb.yaml": 5,
+        "openapi/yaak.wk_43dKgKVATa.yaml": 1,
+        "public/register/index.html": 12,
+        "src/app.js": 4,
+        "src/controllers/favorites.js": 45,
+        "src/middleware/auth.js": 7,
+        "src/router.js": 4,
+        "src/tests/db.test.js": 1,
+        "src/tests/setup.js": 2
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 105,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 26,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 110,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 31,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 110,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 31,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 6,
+      "user_lines_added": 111,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 32,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 7,
+      "user_lines_added": 111,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 32,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 8,
+      "user_lines_added": 124,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 45,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 9,
+      "user_lines_added": 124,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 45,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 10,
+      "user_lines_added": 124,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 45,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 11,
+      "user_lines_added": 124,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 45,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    },
+    {
+      "checkpoint_number": 12,
+      "user_lines_added": 124,
+      "user_lines_removed": 0,
+      "agent_lines_added": 116,
+      "agent_lines_removed": 116,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 19,
+        "public/favorites/app.js": 45,
+        "public/favorites/index.html": 17,
+        "public/login/app.js": 24,
+        "public/login/index.html": 19
+      }
+    }
+  ]
+}
