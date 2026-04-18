@@ -96,6 +96,32 @@ function renderAnime(data) {
   info.appendChild(synopsisLabel);
   info.appendChild(synopsis);
 
+  const btn = document.createElement("button");
+  btn.textContent = "save to Favorites";
+  btn.addEventListener("click", () => {
+    fetch("/api/favorites", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        entity_id: id,
+        entity_type: entityType,
+        title: d.title,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          btn.textContent = "Saved!";
+        } else {
+          btn.textContent = "Failed";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  info.appendChild(btn);
+
   card.appendChild(info);
   card.appendChild(cover);
 

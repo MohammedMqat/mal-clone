@@ -1,0 +1,28 @@
+type: http_request
+model: http_request
+id: rq_QAfe5vuYAz
+createdAt: 2026-04-14T18:25:10.992514939
+updatedAt: 2026-04-14T18:25:43.696544361
+workspaceId: wk_43dKgKVATa
+folderId: fl_Z2X9NDrM7W
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "entity_id":21,
+      "entity_type":"anime",
+      "title":"One Piece"
+    }
+bodyType: application/json
+description: ""
+headers:
+  - enabled: true
+    name: Content-Type
+    value: application/json
+    id: jebed5Wwj8
+method: POST
+name: Add favorite
+sortPriority: 0.0
+url: http://localhost:9080/api/favorites
+urlParameters: []

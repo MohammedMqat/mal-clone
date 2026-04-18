@@ -1,0 +1,15 @@
+type: workspace
+model: workspace
+id: wk_43dKgKVATa
+createdAt: 2026-04-14T17:59:07.504531591
+updatedAt: 2026-04-14T17:59:07.504547795
+authentication: {}
+authenticationType: null
+description: ""
+headers: []
+name: mal-clone
+encryptionKeyChallenge: null
+settingValidateCertificates: true
+settingFollowRedirects: true
+settingRequestTimeout: 0
+settingDnsOverrides: []
