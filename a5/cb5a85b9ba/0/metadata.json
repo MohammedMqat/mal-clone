@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "a5cb5a85b9ba",
+  "session_id": "6f5923b5-2363-4da1-b80d-d9d4dd7fb28c",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-18T19:21:08.503198573Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "docs/student-progress.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-6[1m]",
+  "turn_id": "afc905d1c4e7",
+  "checkpoint_transcript_start": 25,
+  "transcript_lines_at_start": 25,
+  "token_usage": {
+    "input_tokens": 6,
+    "cache_creation_tokens": 13525,
+    "cache_read_tokens": 81766,
+    "output_tokens": 1551,
+    "api_call_count": 4
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-18T19:21:08.411503872Z",
+    "agent_lines": 29,
+    "agent_removed": 9,
+    "human_added": 91,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 120,
+    "total_lines_changed": 159,
+    "agent_percentage": 23.89937106918239,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 20,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 20
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+merge @docs/plans/week-6-7-todo.md  with student-progress and check what is done
