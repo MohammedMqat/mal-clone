@@ -1,0 +1,236 @@
+/teach
+
+---
+
+/teach @docs/plans/week-6-7-todo.md
+
+---
+
+lets start for today
+
+---
+
+no 
+expain to me
+
+---
+
+done
+
+---
+
+guide me
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+done
+
+---
+
+try/catch
+
+---
+
+check
+
+---
+
+done
+
+---
+
+done
+
+---
+
+test yourself
+
+---
+
+i think updating the tests right ?
+
+---
+
+transform zod is better right ?
+
+---
+
+guide me
+
+---
+
+done
+
+---
+
+done
+
+---
+
+done
+
+---
+
+username and password
+
+---
+
+both fields are present cuz its already register so it means its already more than 8 char
+
+---
+
+check
+
+---
+
+done
+
+---
+
+entity type+id,title
+
+---
+
+check
+
+---
+
+check
+
+---
+
+chech
+
+---
+
+conrollers-favorites.js
+
+---
+
+guide me 
+there is alot of if there
+
+---
+
+check
+
+---
+
+done
+
+---
+
+check
+
+---
+
+done
+
+---
+
+i mean user could ask for id 1000000 adn there is no anime in that id
+
+---
+
+guide me
+
+---
+
+guide me step by step
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+but what about line 34-36
+
+---
+
+check
+
+---
+
+explain that
+
+---
+
+check what other tests looks like and if i used vi.stubGlobal or something else
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+guide me step by step
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check and lets start with delete
+
+---
+
+check
+
+---
+
+yes 
+where should i add them
+
+---
+
+@public/login/index.html + @public/register/index.html
+
+---
+
+done
+
+---
+
+check
