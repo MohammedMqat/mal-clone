@@ -9,8 +9,15 @@
   </head>
   <body>
     <form id="login-form">
-      <input id="username" type="text" name="username" placeholder="username" />
-      <input id="password" type="password" name="password" placeholder="password" />
+      <input id="username" type="text" name="username" placeholder="username" required />
+      <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="password"
+        required
+        minlength="8"
+      />
       <button id="submit" type="submit">submit</button>
       <p id="error-msg"></p>
     </form>

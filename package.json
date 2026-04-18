@@ -38,7 +38,8 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "lru-cache": "^11.2.7",
-    "postgres": "^3.4.9"
+    "postgres": "^3.4.9",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.4.4",

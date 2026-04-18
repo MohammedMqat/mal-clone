@@ -1,15 +1,15 @@
 import { db } from "../db.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { loginschema, registerschema } from "../validation.js";
 
 export function register(req, res, next) {
   const { username, password } = req.body;
 
-  if (!username) {
-    return res.status(400).json({ message: "username is empty" });
-  }
-  if (password.length < 8) {
-    return res.status(400).json({ message: "password is too short" });
+  try {
+    registerschema.parse(req.body);
+  } catch (err) {
+    return res.status(400).json({ message: err.issues[0].message });
   }
   bcrypt
     .hash(password, 10)
@@ -29,8 +29,10 @@ export function register(req, res, next) {
 
 export function login(req, res, next) {
   const { username, password } = req.body;
-  if (!password) {
-    return res.status(400).json({ message: "password is missing" });
+  try {
+    loginschema.parse(req.body);
+  } catch (err) {
+    return res.status(400).json({ message: err.issues[0].message });
   }
 
   db.sql`SELECT * FROM users WHERE username = ${username}`

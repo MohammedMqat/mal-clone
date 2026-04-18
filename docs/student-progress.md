@@ -38,20 +38,33 @@
 - [x] `favorites` table added to `src/schema.sql` (id, user_id FK, entity_id, entity_type CHECK, title)
 - [x] `db/build.js` build script created
 
-### Phase 2 — In Progress
+### Phase 2 — Complete
 
 - [x] Installed `jsonwebtoken`, `cookie-parser`; updated `package.json` scripts with `--env-file=.env`
 - [x] Created `.env` with `JWT_SECRET` (gitignored)
-- [ ] Add `express.json()` + `cookieParser()` to `src/app.js`
-- [ ] Create `src/controllers/auth.js` (register + login)
-- [ ] Add auth routes to `src/router.js`
-- [ ] Create `src/middleware/auth.js` (JWT verify)
+- [x] Add `express.json()` + `cookieParser()` to `src/app.js`
+- [x] Create `src/controllers/auth.js` (register + login)
+- [x] Add auth routes to `src/router.js`
+- [x] Create `src/middleware/auth.js` (JWT verify)
 
-### Not started
+### Phase 3 — Complete
 
-- [ ] Favorites controller routes (GET, POST, DELETE)
-- [ ] "Save to favorites" button on detail page
-- [ ] "My Favorites" page
+- [x] Favorites controller routes (GET, POST, DELETE)
+- [x] "Save to favorites" button on detail page
+- [x] "My Favorites" page
+
+### Frontend Pages — Complete
+
+- [x] Register page (`/register/`) with client-side validation
+- [x] Login page (`/login/`) with error display
+- [x] Favorites page (`/favorites/`) with delete support
+
+### Validation — Complete
+
+- [x] Install Zod, create validation schemas for register, login, and favorites (`src/validation.js`)
+- [x] In addFavorite controller, fetch Jikan to verify entity_id exists and use real title from API
+- [x] Add HTML validation attributes (`required`, `minlength`) on frontend forms
+- [x] Updated favorites tests with `vi.stubGlobal("fetch", ...)` mock for Jikan calls
 
 ## Understanding Checkpoints
 
@@ -73,3 +86,10 @@
 - Writing tests before implementation (TDD approach)
 - Understands user_id guard on DELETE — security pattern to prevent cross-user data access
 - Understands entity_type validation (restrict to anime/manga)
+- Understands Zod schema validation — `z.object()`, `z.string().min()`, `z.enum()`, `z.number()`
+- Knows `schema.parse()` throws synchronously — use `try/catch`, not `.catch()`
+- Knows Zod errors live in `.issues[0].message`, not `.errors`
+- Understands custom error messages in Zod (`.min(n, "message")`, `z.enum([], { message })`)
+- Understands why not to trust user input — server should verify against source of truth (Jikan API)
+- Knows `vi.stubGlobal("fetch", ...)` goes inside individual tests, not at file level
+- Knows `Promise.resolve` is a built-in JavaScript global (capital P), not a library import

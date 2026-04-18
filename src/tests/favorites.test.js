@@ -1,8 +1,6 @@
-import { describe, test, expect, beforeEach } from "vitest";
+import { vi, afterEach, describe, test, expect, beforeEach } from "vitest";
 import request from "supertest";
 import { app } from "../app.js";
-
-// setup.js seeds testuser (password: "hashed_password_123") before each test.
 // We log in as that user to get a real session cookie, then use it on
 // protected routes — no middleware mocking needed.
 
@@ -15,6 +13,9 @@ beforeEach(() => {
     .then((res) => {
       sessionCookie = res.headers["set-cookie"];
     });
+});
+afterEach(() => {
+  vi.restoreAllMocks();
 });
 
 describe("GET /api/favorites", () => {
@@ -59,8 +60,13 @@ describe("POST /api/favorites", () => {
       .send({ entity_type: "anime", title: "Naruto" })
       .expect(400);
   });
-
   test("saves the favorite and returns 201 with the created row", () => {
+    vi.stubGlobal("fetch", () =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ data: { title: "Naruto" } }),
+      }),
+    );
     return request(app)
       .post("/api/favorites")
       .set("Cookie", sessionCookie)
@@ -86,7 +92,12 @@ describe("DELETE /api/favorites/:id", () => {
   });
 
   test("deletes a favorite and returns 200", () => {
-    // Create a favorite first, then delete it using the id from the response
+    vi.stubGlobal("fetch", () =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ data: { title: "Naruto" } }),
+      }),
+    );
     return request(app)
       .post("/api/favorites")
       .set("Cookie", sessionCookie)
