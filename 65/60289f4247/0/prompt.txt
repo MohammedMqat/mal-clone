@@ -1,0 +1,123 @@
+read @docs/plans/week-6-7-todo.md and lets start
+
+---
+
+read @docs/plans/review-followups-todo.md and lets start
+
+---
+
+/teach lets start with priority 3
+
+---
+
+guide me
+
+---
+
+user_id
+
+---
+
+done know
+
+---
+
+guide me
+
+---
+
+guide me
+
+---
+
+check
+
+---
+
+what should id type there
+
+---
+
+check
+
+---
+
+response.ok ?
+
+---
+
+502
+
+---
+
+guide me
+
+---
+
+guide me step by step
+
+---
+
+check
+
+---
+
+done
+
+---
+
+database error or fear of losing data
+guide me for solution
+
+---
+
+guide me step by step
+
+---
+
+check
+
+---
+
+check
+
+---
+
+done
+
+---
+
+why ?
+
+---
+
+done
+
+---
+
+dont know 
+why ?
+
+---
+
+check
+
+---
+
+more clean and less coding ?
+
+---
+
+check
+
+---
+
+check
+
+---
+
+commit and push
+
+---
+
+update @docs/plans/review-followups-todo.md then commit then push
