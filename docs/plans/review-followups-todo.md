@@ -11,11 +11,11 @@ Based on mentor review of database + auth work. Ordered by priority.
 
 ## Priority 2 — Schema fixes (`src/schema.sql`)
 
-- [ ] 5. Add `NOT NULL` to `user_id` and `entity_id` on the favorites table
-- [ ] 6. Change `user_id INTEGER REFERENCES users(id)` → add `ON DELETE CASCADE`
-- [ ] 7. Add `UNIQUE (user_id, entity_id, entity_type)` so a user can't save the same anime twice
-- [ ] 8. Add `created_at TIMESTAMP DEFAULT NOW()` on favorites (matches users)
-- [ ] 9. Fix formatting: lowercase `Check` → `CHECK`, remove stray spaces, add newline at EOF
+- [x] 5. Add `NOT NULL` to `user_id` and `entity_id` on the favorites table
+- [x] 6. Change `user_id INTEGER REFERENCES users(id)` → add `ON DELETE CASCADE`
+- [x] 7. Add `UNIQUE (user_id, entity_id, entity_type)` so a user can't save the same anime twice
+- [x] 8. Add `created_at TIMESTAMP DEFAULT NOW()` on favorites (matches users)
+- [x] 9. Fix formatting: lowercase `Check` → `CHECK`, remove stray spaces, add newline at EOF
 
 ## Priority 3 — Correctness / robustness
 

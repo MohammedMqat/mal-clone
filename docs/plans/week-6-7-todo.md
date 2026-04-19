@@ -14,9 +14,9 @@
 - [x] 7. Create `POST /api/register` — validate inputs, hash password with bcrypt, INSERT into users
 - [x] 8. Create `POST /api/login` — bcrypt compare, set cookie or JWT on success
 - [x] 9. Add server-side validation (username not empty, password min length, duplicate username check)
-- [ ] 10a. Install Zod, create validation schemas for register, login, and favorites
-- [ ] 10b. In addFavorite controller, fetch Jikan to verify entity_id exists and get the real title (don't trust user input)
-- [ ] 10c. Add HTML validation attributes (required, minlength) on frontend forms
+- [x] 10a. Install Zod, create validation schemas for register, login, and favorites
+- [x] 10b. In addFavorite controller, fetch Jikan to verify entity_id exists and get the real title (don't trust user input)
+- [x] 10c. Add HTML validation attributes (required, minlength) on frontend forms
 - [x] 11. Build auth middleware that checks cookie/JWT on protected routes
 
 ## Phase 3 — Favorites Feature (Week 6 + 7 combined)
