@@ -1,0 +1,45 @@
+{
+  "cli_version": "0.5.3",
+  "checkpoint_id": "db8a5e46aa71",
+  "session_id": "b690c5a9-de77-414a-9f07-c9734b0f54cd",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-19T10:50:43.626796725Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 12,
+  "files_touched": [
+    "CLAUDE.md",
+    "docs/plans/review-followups-todo.md",
+    "public/favorites/app.js",
+    "src/controllers/auth.js",
+    "src/controllers/favorites.js",
+    "src/router.js",
+    "src/validation.js"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-7",
+  "turn_id": "5d895c3c1e3d",
+  "checkpoint_transcript_start": 613,
+  "transcript_lines_at_start": 613,
+  "token_usage": {
+    "input_tokens": 101,
+    "cache_creation_tokens": 145327,
+    "cache_read_tokens": 4523657,
+    "output_tokens": 8765,
+    "api_call_count": 31
+  },
+  "session_metrics": {
+    "turn_count": 18
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-19T10:50:43.177992697Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 25,
+    "human_removed": 1,
+    "total_committed": 0,
+    "total_lines_changed": 26,
+    "agent_percentage": 0,
+    "metric_version": 2
+  }
+}

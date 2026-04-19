@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.5.3",
+  "checkpoint_id": "db8a5e46aa71",
+  "strategy": "manual-commit",
+  "branch": "week-6-7",
+  "checkpoints_count": 12,
+  "files_touched": [
+    "CLAUDE.md",
+    "docs/plans/review-followups-todo.md",
+    "public/favorites/app.js",
+    "src/controllers/auth.js",
+    "src/controllers/favorites.js",
+    "src/router.js",
+    "src/validation.js"
+  ],
+  "sessions": [
+    {
+      "metadata": "/db/8a5e46aa71/0/metadata.json",
+      "transcript": "/db/8a5e46aa71/0/full.jsonl",
+      "content_hash": "/db/8a5e46aa71/0/content_hash.txt",
+      "prompt": "/db/8a5e46aa71/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 101,
+    "cache_creation_tokens": 145327,
+    "cache_read_tokens": 4523657,
+    "output_tokens": 8765,
+    "api_call_count": 31
+  }
+}
