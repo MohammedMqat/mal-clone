@@ -19,12 +19,12 @@ Based on mentor review of database + auth work. Ordered by priority.
 
 ## Priority 3 — Correctness / robustness
 
-- [ ] 10. Include `user.id` in the JWT payload at login; use `req.user.id` in favorites queries to drop the `(SELECT id FROM users WHERE username = ...)` subquery
-- [ ] 11. In `addFavorite`, check `response.ok` from Jikan before calling `.json()`; treat network errors as gateway errors (502), not internal (500)
-- [ ] 12. Validate `:id` in `deleteFavorite` — use `z.coerce.number().int()` or `Number.isInteger` before hitting the DB
-- [ ] 13. Replace `err.message.match(/unique|duplicate/i)` with `err.code === "23505"` (Postgres `unique_violation`)
-- [ ] 14. In `register`, move the `const { username, password } = req.body` destructure **after** `registerschema.parse(req.body)`
-- [ ] 15. Pick one error-handling pattern across controllers — prefer `next(err)` so `errorMiddleware` formats responses in one place (stop mixing direct `res.status(500)` in favorites.js)
+- [x] 10. Include `user.id` in the JWT payload at login; use `req.user.id` in favorites queries to drop the `(SELECT id FROM users WHERE username = ...)` subquery
+- [x] 11. In `addFavorite`, check `response.ok` from Jikan before calling `.json()`; treat network errors as gateway errors (502), not internal (500)
+- [x] 12. Validate `:id` in `deleteFavorite` — use `z.coerce.number().int()` or `Number.isInteger` before hitting the DB
+- [x] 13. Replace `err.message.match(/unique|duplicate/i)` with `err.code === "23505"` (Postgres `unique_violation`)
+- [x] 14. In `register`, move the `const { username, password } = req.body` destructure **after** `registerschema.parse(req.body)`
+- [x] 15. Pick one error-handling pattern across controllers — prefer `next(err)` so `errorMiddleware` formats responses in one place (stop mixing direct `res.status(500)` in favorites.js)
 
 ## Priority 4 — Naming / conventions
 

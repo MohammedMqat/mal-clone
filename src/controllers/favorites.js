@@ -1,16 +1,15 @@
 import { db } from "../db.js";
 import { favoriteSchema } from "../validation.js";
-export function getFavorites(req, res) {
-  const username = req.user.username;
-  db.sql`SELECT * FROM favorites WHERE user_id = (SELECT id FROM users WHERE username = ${username})`
+export function getFavorites(req, res, next) {
+  db.sql`SELECT * FROM favorites WHERE user_id = ${req.user.id}`
     .then((rows) => {
       res.json(rows);
     })
     .catch((err) => {
-      res.status(500).json({ message: "500 Internal Server Error" });
+      next(err);
     });
 }
-export function addFavorite(req, res) {
+export function addFavorite(req, res, next) {
   const { entity_id, entity_type, title } = req.body;
   try {
     favoriteSchema.parse(req.body);
@@ -18,32 +17,38 @@ export function addFavorite(req, res) {
     return res.status(400).json({ message: err.issues[0].message });
   }
   fetch(`https://api.jikan.moe/v4/${entity_type}/${entity_id}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        return res.status(502).json({ message: "failed to verify entity" });
+      }
+      return response.json();
+    })
     .then((data) => {
       if (!data.data) {
         return res.status(404).json({ message: "anime/manga not found" });
       }
-      const username = req.user.username;
       db.sql`INSERT INTO favorites (user_id, entity_id, entity_type, title)
-VALUES ((SELECT id FROM users WHERE username = ${username}), ${entity_id}, ${entity_type},${data.data.title})
+VALUES (${req.user.id}, ${entity_id}, ${entity_type},${data.data.title})
 RETURNING *`
         .then((rows) => {
           res.status(201).json(rows[0]);
         })
         .catch((err) => {
-          res.status(500).json({ message: "500 Internal Server Error" });
+          next(err);
         });
     })
     .catch((err) => {
-      res.status(500).json({ message: "500 Internal Server Error" });
+      res.status(502).json({ message: "502 failed to verify entity" });
     });
 }
-export function deleteFavorite(req, res) {
+export function deleteFavorite(req, res, next) {
   const { id } = req.params;
-  const username = req.user.username;
+  if (!Number.isInteger(Number(id))) {
+    return res.status(400).json({ message: "the client sent a bad request" });
+  }
   db.sql`DELETE FROM favorites
 WHERE id = ${id}
-AND user_id = (SELECT id FROM users WHERE username = ${username})
+AND user_id = ${req.user.id}
 RETURNING *`
     .then((rows) => {
       if (rows.length === 0) {
@@ -52,6 +57,6 @@ RETURNING *`
       res.status(200).json({ message: "favorite deleted" });
     })
     .catch((err) => {
-      res.status(500).json({ message: "500 Internal Server Error" });
+      next(err);
     });
 }

@@ -3,13 +3,13 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { registerSchema, loginSchema } from "../validation.js";
 export function register(req, res, next) {
-  const { username, password } = req.body;
-
   try {
     registerSchema.parse(req.body);
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }
+  const { username, password } = req.body;
+
   bcrypt
     .hash(password, 10)
     .then((hash) => {
@@ -19,7 +19,7 @@ export function register(req, res, next) {
       res.status(201).json({ username: rows[0].username });
     })
     .catch((err) => {
-      if (err.message.match(/unique|duplicate/i)) {
+      if (err.code === "23505") {
         return res.status(409).json({ message: "username already taken" });
       }
       next(err);
@@ -44,7 +44,7 @@ export function login(req, res, next) {
         if (!isMatch) {
           return res.status(401).json({ message: "invalid credentials" });
         }
-        const token = jwt.sign({ username: user.username }, process.env.JWT_SECRET);
+        const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET);
         res.cookie("token", token, { httpOnly: true });
         return res.status(200).json({ username: user.username });
       });
