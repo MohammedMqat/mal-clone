@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "07b81f3fbbfb",
+  "strategy": "manual-commit",
+  "branch": "week-6-7",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "docs/plans/review-followups-todo.md",
+    "src/schema.sql"
+  ],
+  "sessions": [
+    {
+      "metadata": "/07/b81f3fbbfb/0/metadata.json",
+      "transcript": "/07/b81f3fbbfb/0/full.jsonl",
+      "content_hash": "/07/b81f3fbbfb/0/content_hash.txt",
+      "prompt": "/07/b81f3fbbfb/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 174,
+    "cache_creation_tokens": 390883,
+    "cache_read_tokens": 9785621,
+    "output_tokens": 29148,
+    "api_call_count": 77
+  }
+}
