@@ -9,7 +9,6 @@ fetch("/api/favorites")
     return response.json();
   })
   .then((data) => {
-    console.log(data);
     if (!data) return;
     if (data.length === 0) {
       errMsg.textContent = "no favorites yet";

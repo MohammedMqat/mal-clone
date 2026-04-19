@@ -1,5 +1,5 @@
 import { db } from "../db.js";
-import { favouriteSchema } from "../validation.js";
+import { favoriteSchema } from "../validation.js";
 export function getFavorites(req, res) {
   const username = req.user.username;
   db.sql`SELECT * FROM favorites WHERE user_id = (SELECT id FROM users WHERE username = ${username})`
@@ -13,7 +13,7 @@ export function getFavorites(req, res) {
 export function addFavorite(req, res) {
   const { entity_id, entity_type, title } = req.body;
   try {
-    favouriteSchema.parse(req.body);
+    favoriteSchema.parse(req.body);
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }

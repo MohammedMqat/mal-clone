@@ -1,13 +1,12 @@
 import { db } from "../db.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { loginschema, registerschema } from "../validation.js";
-
+import { registerSchema, loginSchema } from "../validation.js";
 export function register(req, res, next) {
   const { username, password } = req.body;
 
   try {
-    registerschema.parse(req.body);
+    registerSchema.parse(req.body);
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }
@@ -30,7 +29,7 @@ export function register(req, res, next) {
 export function login(req, res, next) {
   const { username, password } = req.body;
   try {
-    loginschema.parse(req.body);
+    loginSchema.parse(req.body);
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }

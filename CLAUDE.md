@@ -46,7 +46,7 @@ vitest.config.js    ← wires setup.js for all tests
 
 ## Tech Constraints
 
-- **No async/await** — `.then()` / `.catch()` Promise chains only
+- **No async/await** — `.then()` / `.catch()` Promise chains only (exception: `src/tests/setup.js` may use async/await, since test infrastructure benefits from sequential setup/teardown)
 - **No frontend framework** — vanilla HTML, CSS, JS
 - **No build tools** — files served as static assets
 

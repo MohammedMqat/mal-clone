@@ -28,11 +28,11 @@ Based on mentor review of database + auth work. Ordered by priority.
 
 ## Priority 4 — Naming / conventions
 
-- [ ] 16. Rename `registerschema` → `registerSchema`, `loginschema` → `loginSchema`, `favouriteSchema` → `favoriteSchema` (consistent camelCase + American spelling to match `favorites` table)
-- [ ] 17. Update all imports that reference the old schema names
-- [ ] 18. Remove `console.log(data)` from `public/favorites/app.js`
-- [ ] 19. Group `src/router.js` sections with blank lines: auth → page routes → cached API
-- [ ] 20. Decide on `async/await` in `src/tests/setup.js` — either add a CLAUDE.md note allowing it in test infra, or convert to `.then()`
+- [x] 16. Rename `registerschema` → `registerSchema`, `loginschema` → `loginSchema`, `favouriteSchema` → `favoriteSchema` (consistent camelCase + American spelling to match `favorites` table)
+- [x] 17. Update all imports that reference the old schema names
+- [x] 18. Remove `console.log(data)` from `public/favorites/app.js`
+- [x] 19. Group `src/router.js` sections with blank lines: auth → page routes → cached API
+- [x] 20. Decide on `async/await` in `src/tests/setup.js` — CLAUDE.md now allows it in test infra
 
 ## Priority 5 — Test coverage gaps
 
