@@ -1,0 +1,25 @@
+ood progress on getFavorites! The SQL on line 5 is correct — you're using req.user.id
+  directly, no subquery.
+
+  One small cleanup: line 4 still says const username = req.user.id — that variable is
+  named username but holds an ID, and you're not even using it in the query (you used
+  req.user.id directly on line 5). You can just remove line 4 entirely since it's unused.
+
+  Now — you still have the old subquery pattern in addFavorite (line 26-28) and
+  deleteFavorite (line 43-46). Can you apply the same change to those two functions?
+
+---
+
+/teach exit
+
+---
+
+ood progress on getFavorites! The SQL on line 5 is correct — you're using req.user.id
+  directly, no subquery.
+
+  One small cleanup: line 4 still says const username = req.user.id — that variable is
+  named username but holds an ID, and you're not even using it in the query (you used
+  req.user.id directly on line 5). You can just remove line 4 entirely since it's unused.
+
+  Now — you still have the old subquery pattern in addFavorite (line 26-28) and
+  deleteFavorite (line 43-46). Can you apply the same change to those two functions?
