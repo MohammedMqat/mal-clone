@@ -94,4 +94,18 @@ describe("POST /api/auth/login", () => {
         expect(res.body).not.toHaveProperty("password_hash");
       });
   });
+
+  test("session cookie is flagged HttpOnly so it's not accessible from JS", () => {
+    return request(app)
+      .post("/api/auth/login")
+      .send({ username: "testuser", password: "hashed_password_123" })
+      .expect(200)
+      .expect((res) => {
+        const cookies = res.headers["set-cookie"];
+        expect(cookies).toBeDefined();
+        const tokenCookie = cookies.find((c) => c.startsWith("token="));
+        expect(tokenCookie).toBeDefined();
+        expect(tokenCookie).toMatch(/HttpOnly/i);
+      });
+  });
 });

@@ -28,13 +28,9 @@ describe("users table", () => {
   });
 
   test("rejects a duplicate username", () => {
-    return db.sql`INSERT INTO users (username, password_hash) VALUES (${"testuser"}, ${"hash"})`
-      .then(() => {
-        throw new Error("should have rejected the duplicate");
-      })
-      .catch((err) => {
-        expect(err.message).toMatch(/unique|duplicate/i);
-      });
+    return expect(
+      db.sql`INSERT INTO users (username, password_hash) VALUES (${"testuser"}, ${"hash"})`,
+    ).rejects.toThrow(/unique|duplicate/i);
   });
 });
 
