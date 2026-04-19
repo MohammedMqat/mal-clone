@@ -1,0 +1,77 @@
+Review — Week 6 (Database) + Week 7 (Auth)
+
+Strong work on the learning objectives. Fundamentals are sound: parameterized queries via tagged templates, bcrypt hashing, JWT in an httpOnly cookie, protected routes via middleware, fresh-per-test DB, and mocking only external Jikan calls. Nice touch verifying entity_id against Jikan in addFavorite instead of trusting the client.
+Security — most important to fix
+
+    JWT never expires. src/controllers/auth.js — jwt.sign({ username }, secret) has no expiresIn. If the cookie leaks, it's valid forever.
+    Cookie missing hardening flags. Sets only httpOnly. Add sameSite: "lax" (CSRF), secure: true in prod, and maxAge to match the JWT lifetime.
+    Error middleware leaks internals. src/middleware/error.js returns error.toString() to the client — in prod this can expose stack traces, file paths, or raw DB errors. Return a generic message; log the detail server-side.
+    No rate-limiting on /api/auth/login — out of scope for this week, but worth a TODO; brute-force is trivial otherwise.
+    Minor: login uses generic "invalid credentials" (good), but /register returns 409 on duplicate → username enumeration. Acceptable tradeoff, just be aware.
+
+Correctness / robustness
+
+    JWT payload doesn't include user.id. Every favorites query re-runs (SELECT id FROM users WHERE username = ${username}) as a subquery. Put id in the token during login and use req.user.id directly — simpler, faster, one fewer lookup per request.
+    addFavorite doesn't check response.ok from Jikan. If Jikan 500s, .json() may still resolve, and the only guard is !data.data. Also, a Jikan network error currently reports 500 to the client — it's a gateway issue, not an internal one.
+    deleteFavorite doesn't validate :id. Non-numeric id → Postgres error → generic 500. A Zod coerce or a simple Number.isInteger guard fixes it.
+    Unique-error detection via regex — err.message.match(/unique|duplicate/i) is fragile. Prefer err.code === \"23505\" (Postgres unique_violation). PGlite should expose the same code.
+    register destructures req.body before validating. Low risk because express.json() gives {} on empty bodies, but move the destructure after parse().
+    Controllers mix next(err) with direct res.status(500). favorites.js catches and responds inline, bypassing your errorMiddleware. Pick one pattern — forwarding to next(err) is cleaner and gives you a single place to format errors.
+
+Schema (src/schema.sql)
+
+    `user_id` / `entity_id` should be `NOT NULL`.
+    `user_id INTEGER REFERENCES users(id)` should have `ON DELETE CASCADE` so deleting a user doesn't orphan favorites.
+    No `UNIQUE (user_id, entity_id, entity_type)` — a user can save the same anime N times.
+    No `created_at` on favorites (you have it on users).
+    Formatting is inconsistent with the `users` block (lowercase `Check`, stray spaces, no newline at EOF).
+
+Project conventions
+
+    Naming inconsistency. `registerschema` / `loginschema` (all lowercase) vs `favouriteSchema` (camelCase) in `validation.js`. Also `favourite` (British) vs `favorites` (American) — pick one throughout; the table is `favorites`.
+    CLAUDE.md says no async/await, but `tests/setup.js` uses `async/await`. If the mentor allows this in test infrastructure, add a note; otherwise convert to `.then()`.
+    Route ordering in `router.js` interleaves auth, page-serving, API routes, and cache middleware with no blank lines. Group them (auth → page routes → cached API) for readability.
+    Debug `console.log(data)` left in `public/favorites/app.js`.
+
+Test coverage
+
+The PGlite-per-test setup is excellent. Gaps to consider:
+
+    `favorites.test.js`: no test for the Jikan 404 path (`data.data` missing → 404 to client).
+    No route-level test verifying user A cannot delete user B's favorite via `/api/favorites/:id` (you tested this at the DB layer in `db.test.js` — lift it up).
+    No test that `entity_id: "not-a-number"` gets rejected (Zod's `z.number()` won't coerce a JSON string).
+    No test asserting the session cookie has `httpOnly`.
+    The duplicate-username DB test uses `.then(throw) / .catch(assert)` — this also swallows assertion failures in the catch. `expect(...).rejects.toThrow()` is less trap-prone.
+
+Nice things worth keeping
+
+    Verifying `entity_id` against Jikan before INSERT.
+    Mocking only `fetch`, never `db.sql`.
+    Logging in via the real `/api/auth/login` to get a session cookie in `favorites.test.js` — better than stubbing middleware.
+    Generic "invalid credentials" on login.
+    Zod as a thin validation boundary.
+    `db/init.sql` vs `src/schema.sql` split documented clearly in `docs/local/db.md`.
+
+Priority fix list
+
+    Add `expiresIn` to JWT + `maxAge`/`sameSite` to the cookie.
+    Stop leaking `error.toString()` from `errorMiddleware`.
+    Add `NOT NULL` + `ON DELETE CASCADE` + `UNIQUE(user_id, entity_id, entity_type)` to the favorites schema.
+    Put `user.id` in the JWT and drop the subquery in favorites.
+    Validate `:id` param on delete; handle Jikan non-`ok` in `addFavorite`.
+    Normalize naming (`favoriteSchema`, consistent casing).
+
+check this review to my project and make a
+TODO list from it
+
+---
+
+/teach exit
+
+---
+
+Do p5 tests
+
+---
+
+commit and push and update to do
