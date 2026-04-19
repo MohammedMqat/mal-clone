@@ -5,6 +5,7 @@
   "branch": "week-6-7",
   "checkpoints_count": 33,
   "files_touched": [
+    "docs/plans/review-followups-todo.md",
     "src/controllers/auth.js",
     "src/controllers/favorites.js"
   ],
@@ -20,13 +21,19 @@
       "transcript": "/65/60289f4247/1/full.jsonl",
       "content_hash": "/65/60289f4247/1/content_hash.txt",
       "prompt": "/65/60289f4247/1/prompt.txt"
+    },
+    {
+      "metadata": "/65/60289f4247/2/metadata.json",
+      "transcript": "/65/60289f4247/2/full.jsonl",
+      "content_hash": "/65/60289f4247/2/content_hash.txt",
+      "prompt": "/65/60289f4247/2/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 123,
-    "cache_creation_tokens": 44405,
-    "cache_read_tokens": 1480471,
-    "output_tokens": 9099,
-    "api_call_count": 55
+    "input_tokens": 130,
+    "cache_creation_tokens": 52500,
+    "cache_read_tokens": 1567171,
+    "output_tokens": 10806,
+    "api_call_count": 60
   }
 }
