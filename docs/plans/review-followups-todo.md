@@ -4,10 +4,10 @@ Based on mentor review of database + auth work. Ordered by priority.
 
 ## Priority 1 — Security (do first)
 
-- [ ] 1. Add `expiresIn` to `jwt.sign()` in `src/controllers/auth.js`
-- [ ] 2. Harden the session cookie: add `sameSite: "lax"`, `secure` (prod only), and `maxAge` matching the JWT lifetime
-- [ ] 3. Stop leaking `error.toString()` from `src/middleware/error.js` — send a generic message, log details server-side
-- [ ] 4. Add a TODO comment on `/api/auth/login` noting that rate-limiting is missing (brute-force risk)
+- [x] 1. Add `expiresIn` to `jwt.sign()` in `src/controllers/auth.js`
+- [x] 2. Harden the session cookie: add `sameSite: "lax"`, `secure` (prod only), and `maxAge` matching the JWT lifetime
+- [x] 3. Stop leaking `error.toString()` from `src/middleware/error.js` — send a generic message, log details server-side
+- [x] 4. Add a TODO comment on `/api/auth/login` noting that rate-limiting is missing (brute-force risk)
 
 ## Priority 2 — Schema fixes (`src/schema.sql`)
 

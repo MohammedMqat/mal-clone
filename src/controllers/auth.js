@@ -44,8 +44,15 @@ export function login(req, res, next) {
         if (!isMatch) {
           return res.status(401).json({ message: "invalid credentials" });
         }
-        const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET);
-        res.cookie("token", token, { httpOnly: true });
+        const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET, {
+          expiresIn: "7d",
+        });
+        res.cookie("token", token, {
+          httpOnly: true,
+          sameSite: "lax",
+          secure: process.env.NODE_ENV === "production",
+          maxAge: 604800000,
+        });
         return res.status(200).json({ username: user.username });
       });
     })

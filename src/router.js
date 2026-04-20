@@ -9,6 +9,7 @@ import { getFavorites, addFavorite, deleteFavorite } from "./controllers/favorit
 import { requireAuth } from "./middleware/auth.js";
 export const router = express.Router();
 router.post("/api/auth/register", register);
+// TODO: rate-limiting is missing
 router.post("/api/auth/login", login);
 
 router.get("/api/favorites", requireAuth, getFavorites);
