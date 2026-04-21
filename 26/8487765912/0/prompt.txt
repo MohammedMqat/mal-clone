@@ -1,0 +1,9 @@
+update @docs/quick-wins-todo.md then commit then push
+
+---
+
+u sure its commited ?
+
+---
+
+but files still there ready to be commited ?
