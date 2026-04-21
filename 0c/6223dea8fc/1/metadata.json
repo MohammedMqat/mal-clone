@@ -1,0 +1,55 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "0c6223dea8fc",
+  "session_id": "b4fe7f0a-640e-484f-b7ef-271c86011471",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-21T18:32:28.193448085Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "docs/quick-wins-todo.md",
+    "public/entity/app.js",
+    "src/controllers/anime-details.js",
+    "src/router.js"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-6[1m]",
+  "turn_id": "f8f69c915137",
+  "token_usage": {
+    "input_tokens": 6,
+    "cache_creation_tokens": 9421,
+    "cache_read_tokens": 67495,
+    "output_tokens": 1197,
+    "api_call_count": 4
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-21T18:32:28.15309098Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 3,
+    "human_modified": 7,
+    "human_removed": 0,
+    "total_committed": 3,
+    "total_lines_changed": 10,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 65,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25,
+        "public/entity/app.js": 28,
+        "src/controllers/anime-details.js": 10,
+        "src/router.js": 2
+      },
+      "user_removed_per_file": {
+        "src/router.js": 1
+      }
+    }
+  ]
+}
