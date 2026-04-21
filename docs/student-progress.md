@@ -94,9 +94,10 @@
 - Knows `vi.stubGlobal("fetch", ...)` goes inside individual tests, not at file level
 - Knows `Promise.resolve` is a built-in JavaScript global (capital P), not a library import
 
-### Review Follow-ups Progress
+### Review Follow-ups — Complete
 
+- [x] P1 Security: JWT expiry, cookie hardening (sameSite, secure, maxAge), generic error messages, rate-limit TODO
 - [x] P2 Schema: NOT NULL, ON DELETE CASCADE, UNIQUE constraint, created_at, formatting
+- [x] P3 Correctness: user.id in JWT payload, Jikan response.ok check, delete param validation, Postgres error code 23505, next(err) pattern
 - [x] P4 Naming: camelCase schemas, consistent American spelling, router grouping, debug log cleanup
 - [x] P5 Tests: Jikan 404 path, cross-user delete, HttpOnly cookie, non-numeric entity_id, rejects.toThrow pattern
-- Remaining: P1 (security — JWT expiry, cookie hardening, error leaks), P3 (correctness — user.id in JWT, Jikan response.ok, delete param validation, Postgres error codes, error handling pattern)

@@ -80,6 +80,12 @@ function renderAnime(data) {
       genres.appendChild(badge);
     });
   }
+  // Trailer
+  if (d.trailer.embed_url) {
+    const trailer = document.createElement("iframe");
+    trailer.src = d.trailer.embed_url;
+    info.appendChild(trailer);
+  }
 
   // Synopsis
   const synopsisLabel = document.createElement("div");
