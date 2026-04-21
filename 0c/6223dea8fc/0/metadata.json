@@ -1,0 +1,94 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "0c6223dea8fc",
+  "session_id": "a3c5dae0-1e0d-4a28-a985-f81f612d447e",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-21T18:32:22.110900765Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 4,
+  "files_touched": [
+    "src/controllers/anime-details.js",
+    "src/router.js"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-6[1m]",
+  "turn_id": "cec763e9c6f5",
+  "token_usage": {
+    "input_tokens": 56,
+    "cache_creation_tokens": 12184,
+    "cache_read_tokens": 524416,
+    "output_tokens": 3656,
+    "api_call_count": 27
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-21T18:32:22.026603356Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 12,
+    "human_modified": 8,
+    "human_removed": 0,
+    "total_committed": 12,
+    "total_lines_changed": 21,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 29,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25,
+        "src/controllers/anime-details.js": 4
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 39,
+      "user_lines_removed": 4,
+      "agent_lines_added": 4,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25,
+        "src/controllers/anime-details.js": 14
+      },
+      "user_removed_per_file": {
+        "src/controllers/anime-details.js": 4
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 28,
+      "user_lines_removed": 1,
+      "agent_lines_added": 14,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25,
+        "src/controllers/anime-details.js": 1,
+        "src/router.js": 2
+      },
+      "user_removed_per_file": {
+        "src/controllers/anime-details.js": 1
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 27,
+      "user_lines_removed": 3,
+      "agent_lines_added": 16,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25,
+        "src/router.js": 2
+      },
+      "user_removed_per_file": {
+        "src/router.js": 3
+      }
+    }
+  ]
+}

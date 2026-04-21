@@ -1,0 +1,59 @@
+@docs/quick-wins-todo.md /teach read then lets start
+
+---
+
+yeah done that lets start
+
+---
+
+there is no result about "streaming"
+
+---
+
+there is non
+check
+
+---
+
+check again
+
+---
+
+data    
+0    
+name    "Crunchyroll"
+url    "http://www.crunchyroll.com/series-257631"
+1    
+name    "Netflix"
+url    "https://www.netflix.com/title/80107103"
+2    
+name    "Shahid"
+url    "https://shahid.mbc.net/en/series/One-Piece/series-826519"
+
+---
+
+guide me step by step
+
+---
+
+guide me
+
+---
+
+guide me again
+
+---
+
+chech
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
