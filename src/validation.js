@@ -10,6 +10,6 @@ export const loginSchema = z.object({
 
 export const favoriteSchema = z.object({
   entity_type: z.enum(["anime", "manga"], { message: "entity_type Must be anime Or manga" }),
-  entity_id: z.number(),
+  entity_id: z.coerce.number().int().positive(),
   title: z.string().min(1),
 });

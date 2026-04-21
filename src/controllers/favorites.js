@@ -10,20 +10,24 @@ export function getFavorites(req, res, next) {
     });
 }
 export function addFavorite(req, res, next) {
-  const { entity_id, entity_type, title } = req.body;
   try {
     favoriteSchema.parse(req.body);
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }
+  const { entity_id, entity_type } = req.body;
   fetch(`https://api.jikan.moe/v4/${entity_type}/${entity_id}`)
     .then((response) => {
+      if (response.status === 404) {
+        return res.status(404).json({ message: "anime/manga not found" });
+      }
       if (!response.ok) {
         return res.status(502).json({ message: "failed to verify entity" });
       }
       return response.json();
     })
     .then((data) => {
+      if (!data) return;
       if (!data.data) {
         return res.status(404).json({ message: "anime/manga not found" });
       }
@@ -38,7 +42,7 @@ RETURNING *`
         });
     })
     .catch((err) => {
-      res.status(502).json({ message: "502 failed to verify entity" });
+      next(err);
     });
 }
 export function deleteFavorite(req, res, next) {
