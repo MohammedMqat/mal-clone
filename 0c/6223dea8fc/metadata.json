@@ -3,7 +3,7 @@
   "checkpoint_id": "0c6223dea8fc",
   "strategy": "manual-commit",
   "branch": "week-6-7",
-  "checkpoints_count": 4,
+  "checkpoints_count": 6,
   "files_touched": [
     "docs/quick-wins-todo.md",
     "public/entity/app.js",
@@ -22,13 +22,19 @@
       "transcript": "/0c/6223dea8fc/1/full.jsonl",
       "content_hash": "/0c/6223dea8fc/1/content_hash.txt",
       "prompt": "/0c/6223dea8fc/1/prompt.txt"
+    },
+    {
+      "metadata": "/0c/6223dea8fc/2/metadata.json",
+      "transcript": "/0c/6223dea8fc/2/full.jsonl",
+      "content_hash": "/0c/6223dea8fc/2/content_hash.txt",
+      "prompt": "/0c/6223dea8fc/2/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 62,
-    "cache_creation_tokens": 21605,
-    "cache_read_tokens": 591911,
-    "output_tokens": 4853,
-    "api_call_count": 31
+    "input_tokens": 82,
+    "cache_creation_tokens": 33631,
+    "cache_read_tokens": 821084,
+    "output_tokens": 8447,
+    "api_call_count": 43
   }
 }

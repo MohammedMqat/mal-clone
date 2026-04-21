@@ -1,0 +1,70 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "0c6223dea8fc",
+  "session_id": "cca371c6-bee4-4ef2-b8cb-730e73fa293a",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-21T18:32:28.266041797Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "public/entity/app.js",
+    "src/controllers/anime-details.js",
+    "src/router.js"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-4-6[1m]",
+  "turn_id": "1f0e7bb08b76",
+  "token_usage": {
+    "input_tokens": 20,
+    "cache_creation_tokens": 12026,
+    "cache_read_tokens": 229173,
+    "output_tokens": 3594,
+    "api_call_count": 12
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-21T18:32:28.215235494Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 24,
+    "human_modified": 10,
+    "human_removed": 0,
+    "total_committed": 24,
+    "total_lines_changed": 35,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 41,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25,
+        "src/controllers/anime-details.js": 14,
+        "src/router.js": 2
+      },
+      "user_removed_per_file": {
+        "src/router.js": 1
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 49,
+      "user_lines_removed": 4,
+      "agent_lines_added": 16,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25,
+        "public/entity/app.js": 24
+      },
+      "user_removed_per_file": {
+        "src/controllers/anime-details.js": 4
+      }
+    }
+  ]
+}

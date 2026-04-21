@@ -1,0 +1,28 @@
+● Backend is done! Clean import on line 6, correct function animeStreaming on line 22, and
+  it's above the catch-all :entityType/:id route. Nice.
+
+  Step 3: Frontend — now you need to call this route from your detail page and display the
+  links.
+
+  Open public/entity/app.js. You'll need to:
+
+  1. Fetch from /api/anime/{id}/streaming (where id comes from the URL, same way you get it
+   for the detail data)
+  2. Loop through the data array in the response
+  3. Render each streaming link — a clickable <a> tag with the name and url
+
+  Where in the detail page would you put the streaming links? And do you want to make a
+  separate fetch call, or chain it with the existing detail fetch? Take a look at the file
+  and decide.
+
+---
+
+just do the right thing
+
+---
+
+look complicatted is that all really neccesary i mean look to my code and just do same thing
+
+---
+
+dont need css
