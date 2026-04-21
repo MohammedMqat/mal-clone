@@ -12,3 +12,13 @@ export const animeDetails = (req, res) => {
       res.status(500).json({ message: "Internal server error: " + error.message });
     });
 };
+export const animeStreaming = (req, res) => {
+  const id = req.params.id;
+  fetch(`https://api.jikan.moe/v4/anime/${id}/streaming`)
+    .then((response) => response.json())
+    .then((data) => res.json(data))
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({ message: "Internal server error: " + error.message });
+    });
+};

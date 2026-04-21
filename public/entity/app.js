@@ -132,6 +132,34 @@ function renderAnime(data) {
   card.appendChild(cover);
 
   detailsContainer.appendChild(card);
+
+  if (entityType === "anime") {
+    fetch("/api/anime/" + encodeURIComponent(id) + "/streaming")
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (streamData) {
+        const links = streamData.data;
+        if (!links || links.length === 0) return;
+
+        const label = document.createElement("div");
+        label.className = "detail-synopsis-label";
+        label.textContent = "Streaming";
+        info.appendChild(label);
+
+        links.forEach(function (link) {
+          const a = document.createElement("a");
+          a.href = link.url;
+          a.textContent = link.name;
+          a.target = "_blank";
+          a.className = "streaming-link";
+          info.appendChild(a);
+        });
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }
 }
 
 fetchAnime().then(renderAnime);
