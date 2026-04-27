@@ -2,12 +2,15 @@ const searchParams = new URLSearchParams(location.search);
 let currentPage = Number(searchParams.get("page") || 1);
 let searchQuery = searchParams.get("q");
 let entityType = location.pathname.split("/")[2] || "anime";
+let sortBy = searchParams.get("order_by");
 
 const searchResultsContainer = document.getElementById("search-results");
 const paginationContainer = document.getElementById("pagination");
 const typeSelect = document.getElementById("type");
 const textInput = document.getElementById("text");
+const drobDown = document.getElementById("sort");
 
+drobDown.value = sortBy;
 typeSelect.value = entityType;
 if (searchQuery) textInput.value = searchQuery;
 

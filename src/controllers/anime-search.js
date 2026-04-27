@@ -1,5 +1,5 @@
 export const searchAnime = (req, res) => {
-  const { q = "", page = 1 } = req.query;
+  const { q = "", page = 1, order_by = "", sort = "" } = req.query;
   const { entityType = "anime" } = req.params;
   if (!["anime", "manga"].includes(entityType)) {
     return res.status(400).json("Only manga and anime are allowed values");
@@ -8,7 +8,13 @@ export const searchAnime = (req, res) => {
     return res.status(400).json({ message: "Please search with a query" });
   }
 
-  fetch(`https://api.jikan.moe/v4/${entityType}?q=${q}&page=${page}`)
+  const url = new URL(`https://api.jikan.moe/v4/${entityType}`);
+  url.searchParams.set("q", q);
+  url.searchParams.set("page", page);
+  if (order_by) url.searchParams.set("order_by", order_by);
+  if (sort) url.searchParams.set("sort", sort);
+
+  fetch(url)
     .then((response) => {
       if (!response.ok) {
         throw { status: response.status, message: "upstream error" };
