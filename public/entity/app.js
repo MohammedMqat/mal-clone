@@ -133,6 +133,35 @@ function renderAnime(data) {
 
   detailsContainer.appendChild(card);
 
+  // Related anime/manga
+  if (d.relations && d.relations.length > 0) {
+    const relLabel = document.createElement("div");
+    relLabel.className = "detail-synopsis-label";
+    relLabel.textContent = "Related";
+    info.appendChild(relLabel);
+
+    const relContainer = document.createElement("div");
+    relContainer.className = "related-container";
+
+    d.relations.forEach(function (rel) {
+      rel.entry.forEach(function (entry) {
+        const a = document.createElement("a");
+        a.href = "/" + entry.type + "/" + entry.mal_id;
+        a.className = "related-link";
+        a.innerHTML =
+          "<span class='related-type'>" +
+          rel.relation +
+          "</span>" +
+          "<span class='related-name'>" +
+          entry.name +
+          "</span>";
+        relContainer.appendChild(a);
+      });
+    });
+
+    info.appendChild(relContainer);
+  }
+
   if (entityType === "anime") {
     fetch("/api/anime/" + encodeURIComponent(id) + "/streaming")
       .then(function (res) {

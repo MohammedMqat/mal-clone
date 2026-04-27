@@ -14,7 +14,7 @@ Smallest effort, noticeable UX improvement.
 
 - [x] 1. Embed trailer video on detail page
 - [x] 2. Show streaming links on detail page
-- [ ] 3. Show related anime links on detail page
+- [x] 3. Show related anime links on detail page
 
 ## Search Page
 
