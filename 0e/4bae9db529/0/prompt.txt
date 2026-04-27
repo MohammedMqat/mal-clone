@@ -1,0 +1,61 @@
+check to do
+
+---
+
+lets start with sort dropdown
+
+---
+
+/teach
+
+---
+
+guide me
+
+---
+
+const { q = "", page = 1, order_by = "", sort = "" } = req.query;
+
+---
+
+check
+
+---
+
+after the search bar ?
+
+---
+
+right before the submit
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check and lets start
+
+---
+
+let sortBy = searchParams.get("order_by")
+
+---
+
+check
+
+---
+
+check
+
+---
+
+guide me
