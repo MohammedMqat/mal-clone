@@ -18,7 +18,7 @@ Smallest effort, noticeable UX improvement.
 
 ## Search Page
 
-- [ ] 4. Add sort dropdown (uses `order_by` param)
+- [x] 4. Add sort dropdown (uses `order_by` param)
 
 ## Home Page
 
