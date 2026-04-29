@@ -65,7 +65,10 @@ function renderAnime(data) {
   tags.forEach((t) => {
     const tag = document.createElement("span");
     tag.className = "detail-tag";
-    tag.innerHTML = `<strong>${t.label}:</strong> ${t.value}`;
+    const strong = document.createElement("strong");
+    strong.textContent = t.label + ":";
+    tag.appendChild(strong);
+    tag.appendChild(document.createTextNode(" " + t.value));
     metaGrid.appendChild(tag);
   });
 
@@ -103,7 +106,7 @@ function renderAnime(data) {
   info.appendChild(synopsis);
 
   const btn = document.createElement("button");
-  btn.textContent = "save to Favorites";
+  btn.textContent = "Save to Favorites";
   btn.addEventListener("click", () => {
     fetch("/api/favorites", {
       method: "POST",
@@ -148,13 +151,14 @@ function renderAnime(data) {
         const a = document.createElement("a");
         a.href = "/" + entry.type + "/" + entry.mal_id;
         a.className = "related-link";
-        a.innerHTML =
-          "<span class='related-type'>" +
-          rel.relation +
-          "</span>" +
-          "<span class='related-name'>" +
-          entry.name +
-          "</span>";
+        const typeSpan = document.createElement("span");
+        typeSpan.className = "related-type";
+        typeSpan.textContent = rel.relation;
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "related-name";
+        nameSpan.textContent = entry.name;
+        a.appendChild(typeSpan);
+        a.appendChild(nameSpan);
         relContainer.appendChild(a);
       });
     });

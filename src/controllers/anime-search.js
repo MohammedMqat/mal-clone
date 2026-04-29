@@ -2,7 +2,7 @@ export const searchAnime = (req, res) => {
   const { q = "", page = 1, order_by = "", sort = "" } = req.query;
   const { entityType = "anime" } = req.params;
   if (!["anime", "manga"].includes(entityType)) {
-    return res.status(400).json("Only manga and anime are allowed values");
+    return res.status(400).json({ message: "Only manga and anime are allowed values" });
   }
   if (q.length === 0) {
     return res.status(400).json({ message: "Please search with a query" });

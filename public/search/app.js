@@ -8,9 +8,9 @@ const searchResultsContainer = document.getElementById("search-results");
 const paginationContainer = document.getElementById("pagination");
 const typeSelect = document.getElementById("type");
 const textInput = document.getElementById("text");
-const drobDown = document.getElementById("sort");
+const sortSelect = document.getElementById("sort");
 
-drobDown.value = sortBy;
+sortSelect.value = sortBy;
 typeSelect.value = entityType;
 if (searchQuery) textInput.value = searchQuery;
 
@@ -18,7 +18,7 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const q = textInput.value;
   const type = typeSelect.value;
-  const sort = drobDown.value;
+  const sort = sortSelect.value;
   if (q.trim()) {
     let url = `/search/${type}?q=${encodeURIComponent(q)}`;
     if (sort) url += `&order_by=${sort}`;

@@ -1,7 +1,7 @@
 export const TopAnime = (req, res) => {
   const { entityType } = req.params;
   if (!["anime", "manga"].includes(entityType)) {
-    return res.status(400).json("Only manga and anime are allowed values");
+    return res.status(400).json({ message: "Only manga and anime are allowed values" });
   }
 
   fetch(`https://api.jikan.moe/v4/top/${entityType}?limit=10`)

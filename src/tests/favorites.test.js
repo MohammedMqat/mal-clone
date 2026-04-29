@@ -107,6 +107,30 @@ describe("POST /api/favorites", () => {
         });
       });
   });
+
+  test("returns 409 when saving a duplicate favorite", () => {
+    vi.stubGlobal("fetch", () =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ data: { title: "Naruto" } }),
+      }),
+    );
+    return request(app)
+      .post("/api/favorites")
+      .set("Cookie", sessionCookie)
+      .send({ entity_id: 30, entity_type: "anime", title: "Naruto" })
+      .expect(201)
+      .then(() => {
+        return request(app)
+          .post("/api/favorites")
+          .set("Cookie", sessionCookie)
+          .send({ entity_id: 30, entity_type: "anime", title: "Naruto" })
+          .expect(409)
+          .expect((res) => {
+            expect(res.body.message).toMatch(/already in favorites/i);
+          });
+      });
+  });
 });
 
 describe("DELETE /api/favorites/:id", () => {

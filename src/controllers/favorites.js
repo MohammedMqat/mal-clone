@@ -32,17 +32,16 @@ export function addFavorite(req, res, next) {
       if (!data.data) {
         return res.status(404).json({ message: "anime/manga not found" });
       }
-      db.sql`INSERT INTO favorites (user_id, entity_id, entity_type, title)
+      return db.sql`INSERT INTO favorites (user_id, entity_id, entity_type, title)
              VALUES (${req.user.id}, ${entity_id}, ${entity_type},${title})
-             RETURNING *`
-        .then((rows) => {
-          res.status(201).json(rows[0]);
-        })
-        .catch((err) => {
-          next(err);
-        });
+             RETURNING *`.then((rows) => {
+        res.status(201).json(rows[0]);
+      });
     })
     .catch((err) => {
+      if (err.code === "23505") {
+        return res.status(409).json({ message: "already in favorites" });
+      }
       next(err);
     });
 }

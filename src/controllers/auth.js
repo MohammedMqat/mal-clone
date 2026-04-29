@@ -27,12 +27,12 @@ export function register(req, res, next) {
 }
 
 export function login(req, res, next) {
-  const { username, password } = req.body;
   try {
     loginSchema.parse(req.body);
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }
+  const { username, password } = req.body;
 
   db.sql`SELECT * FROM users WHERE username = ${username}`
     .then((rows) => {
