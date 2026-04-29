@@ -22,4 +22,4 @@ Smallest effort, noticeable UX improvement.
 
 ## Home Page
 
-- [ ] 5. Add seasonal anime section (new route + frontend, uses `/v4/seasons/now`)
+- [x] 5. Add seasonal anime section (new route + frontend, uses `/v4/seasons/now`)
