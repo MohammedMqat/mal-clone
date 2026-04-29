@@ -1,8 +1,13 @@
+import "./instrument.js";
+
+import * as Sentry from "@sentry/node";
+
 import path from "path";
 import express from "express";
-import { router } from "./router.js";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+
+import { router } from "./router.js";
 import { errorMiddleware } from "./middleware/error.js";
 
 const publicDir = path.join(import.meta.dirname, "..", "public");
@@ -17,4 +22,6 @@ app.use(cookieParser());
 app.use(express.static(publicDir));
 
 app.use("/", router);
+
+Sentry.setupExpressErrorHandler(app);
 app.use(errorMiddleware);
