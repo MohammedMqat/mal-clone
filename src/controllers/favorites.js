@@ -10,12 +10,13 @@ export function getFavorites(req, res, next) {
     });
 }
 export function addFavorite(req, res, next) {
+  let validatedBody;
   try {
-    favoriteSchema.parse(req.body);
+    validatedBody = favoriteSchema.parse(req.body);
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }
-  const { entity_id, entity_type } = req.body;
+  const { entity_id, entity_type, title } = validatedBody;
   fetch(`https://api.jikan.moe/v4/${entity_type}/${entity_id}`)
     .then((response) => {
       if (response.status === 404) {
@@ -32,8 +33,8 @@ export function addFavorite(req, res, next) {
         return res.status(404).json({ message: "anime/manga not found" });
       }
       db.sql`INSERT INTO favorites (user_id, entity_id, entity_type, title)
-VALUES (${req.user.id}, ${entity_id}, ${entity_type},${data.data.title})
-RETURNING *`
+             VALUES (${req.user.id}, ${entity_id}, ${entity_type},${title})
+             RETURNING *`
         .then((rows) => {
           res.status(201).json(rows[0]);
         })
