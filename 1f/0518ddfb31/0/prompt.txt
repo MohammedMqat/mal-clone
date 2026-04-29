@@ -1,0 +1,24 @@
+● I can see what you're going for, but there are a few issues. Let me point them out:
+
+  Lines 103-105 (Previous button): You set window.location.search on line 103, then try to
+  append to url — but url doesn't exist here. Also, sort doesn't exist in this scope —
+  you're inside renderResults, not the submit handler. Use sortBy instead (the variable
+  from line 5). You need to build the string before assigning it, like:
+
+  let search = `?q=${searchQuery}&page=${currentPage - 1}`;
+  if (sortBy) search += `&order_by=${sortBy}`;
+  window.location.search = search;
+
+  Lines 119-121 (Next button): Same issue — same fix.
+
+  Lines 130-134 (fetch): You can't put an if statement inside a function argument. Build
+  the URL string before the fetch call, then pass it in:
+
+  let fetchUrl = `/api/${entityType}/search?q=...&page=...`;
+  if (sortBy) fetchUrl += `&order_by=${sortBy}`;
+  fetch(fetchUrl)
+
+  The key idea: build the URL first, conditionally append, then use it. That's the pattern
+  you got right in the form submit — apply the same thing here.
+
+  Give it another try.
