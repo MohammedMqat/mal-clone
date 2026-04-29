@@ -1,0 +1,38 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "1232fa81d6fc",
+  "strategy": "manual-commit",
+  "branch": "week-6-7",
+  "checkpoints_count": 4,
+  "files_touched": [
+    ".gitignore",
+    "docs/review-todo.md",
+    "package-lock.json",
+    "package.json",
+    "public/entity/app.js",
+    "public/search/app.js",
+    "src/controllers/anime-details.js",
+    "src/controllers/anime-search.js",
+    "src/controllers/anime-seasonal.js",
+    "src/controllers/auth.js",
+    "src/controllers/favorites.js",
+    "src/controllers/top-anime.js",
+    "src/router.js",
+    "src/tests/favorites.test.js"
+  ],
+  "sessions": [
+    {
+      "metadata": "/12/32fa81d6fc/0/metadata.json",
+      "transcript": "/12/32fa81d6fc/0/full.jsonl",
+      "content_hash": "/12/32fa81d6fc/0/content_hash.txt",
+      "prompt": "/12/32fa81d6fc/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 285,
+    "cache_creation_tokens": 105827,
+    "cache_read_tokens": 8013786,
+    "output_tokens": 26974,
+    "api_call_count": 140
+  }
+}

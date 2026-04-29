@@ -1,0 +1,107 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "1232fa81d6fc",
+  "session_id": "86905118-b46c-4aad-bb66-a0f7baf8670c",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-29T20:58:07.911800357Z",
+  "branch": "week-6-7",
+  "checkpoints_count": 4,
+  "files_touched": [
+    ".gitignore",
+    "docs/review-todo.md",
+    "package-lock.json",
+    "package.json",
+    "public/entity/app.js",
+    "public/search/app.js",
+    "src/controllers/anime-details.js",
+    "src/controllers/anime-search.js",
+    "src/controllers/anime-seasonal.js",
+    "src/controllers/auth.js",
+    "src/controllers/favorites.js",
+    "src/controllers/top-anime.js",
+    "src/router.js",
+    "src/tests/favorites.test.js"
+  ],
+  "agent": "Claude Code",
+  "model": "",
+  "turn_id": "c9bac9d80a3a",
+  "token_usage": {
+    "input_tokens": 285,
+    "cache_creation_tokens": 105827,
+    "cache_read_tokens": 8013786,
+    "output_tokens": 26974,
+    "api_call_count": 140
+  },
+  "session_metrics": {
+    "turn_count": 6
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-29T20:58:07.398452414Z",
+    "agent_lines": 991,
+    "agent_removed": 37,
+    "human_added": 0,
+    "human_modified": 4,
+    "human_removed": 8,
+    "total_committed": 995,
+    "total_lines_changed": 1040,
+    "agent_percentage": 98.84615384615385,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 70,
+      "user_lines_removed": 7,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25,
+        "docs/review-todo.md": 37,
+        "public/entity/app.js": 8
+      },
+      "user_removed_per_file": {
+        "public/entity/app.js": 7
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 25,
+      "user_lines_removed": 0,
+      "agent_lines_added": 45,
+      "agent_lines_removed": 7,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 25,
+      "user_lines_removed": 0,
+      "agent_lines_added": 45,
+      "agent_lines_removed": 7,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 25,
+      "user_lines_removed": 0,
+      "agent_lines_added": 45,
+      "agent_lines_removed": 7,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 25,
+      "user_lines_removed": 0,
+      "agent_lines_added": 120,
+      "agent_lines_removed": 44,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 25
+      }
+    }
+  ]
+}

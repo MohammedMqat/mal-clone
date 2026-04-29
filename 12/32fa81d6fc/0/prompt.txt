@@ -1,0 +1,29 @@
+So check latest changes and explain them line by line
+
+---
+
+/teach read @docs/review-todo.md
+
+---
+
+exit teach
+
+---
+
+@docs/review-todo.md lets start with them one by one
+
+---
+
+explain wwhat you are doing wwhile we fix it together
+
+---
+
+yes
+
+---
+
+exit teach
+
+---
+
+lets start with them while u fix it explain your fixes throguht it
