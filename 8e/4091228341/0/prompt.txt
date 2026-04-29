@@ -1,0 +1,37 @@
+okay lets start iwth ti
+
+---
+
+create a new wcontrollers for it
+and a route in router.js
+and a new index.html or its just updating an existing one
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+check
+
+---
+
+exit teach
+
+---
+
+do frontend 
+
+● See the pattern on lines 27-38? There are two <section> blocks — one for Top Anime, one
+  for Top Manga. Each has a title and a container div with a unique id.
+
+  You need to add a similar section for seasonal anime. Where would you put it, and what id
+   would you give the container? Try adding it to the HTML.
