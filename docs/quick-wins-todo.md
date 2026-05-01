@@ -2,13 +2,13 @@
 
 Smallest effort, noticeable UX improvement.
 
-| # | Feature | Effort | Jikan endpoint |
-|---|---------|--------|----------------|
-| 1 | Trailer embed | ~10 lines JS | Already in detail response |
-| 2 | Streaming links | ~15 lines JS | Already in detail response |
-| 3 | Related anime links | ~20 lines JS | Already in detail response |
-| 4 | Sort dropdown on search | ~30 lines JS + minor backend | `order_by` param |
-| 5 | Seasonal anime section | ~1 new route + frontend section | `/v4/seasons/now` |
+| #   | Feature                 | Effort                          | Jikan endpoint             |
+| --- | ----------------------- | ------------------------------- | -------------------------- |
+| 1   | Trailer embed           | ~10 lines JS                    | Already in detail response |
+| 2   | Streaming links         | ~15 lines JS                    | Already in detail response |
+| 3   | Related anime links     | ~20 lines JS                    | Already in detail response |
+| 4   | Sort dropdown on search | ~30 lines JS + minor backend    | `order_by` param           |
+| 5   | Seasonal anime section  | ~1 new route + frontend section | `/v4/seasons/now`          |
 
 ## Detail Page Enhancements
 
