@@ -1,4 +1,4 @@
-export const animeDetails = (req, res) => {
+export const animeDetails = (req, res, next) => {
   const id = req.params.id;
   const { entityType } = req.params;
   if (!["anime", "manga"].includes(entityType)) {
@@ -12,13 +12,9 @@ export const animeDetails = (req, res) => {
       return response.json();
     })
     .then((data) => res.json(data))
-    .catch((error) => {
-      const status = error.status || 500;
-      console.error(error);
-      res.status(status).json({ message: "Internal server error" });
-    });
+    .catch(next);
 };
-export const animeStreaming = (req, res) => {
+export const animeStreaming = (req, res, next) => {
   const id = req.params.id;
   fetch(`https://api.jikan.moe/v4/anime/${id}/streaming`)
     .then((response) => {
@@ -28,9 +24,5 @@ export const animeStreaming = (req, res) => {
       return response.json();
     })
     .then((data) => res.json(data))
-    .catch((error) => {
-      const status = error.status || 500;
-      console.error(error);
-      res.status(status).json({ message: "Internal server error" });
-    });
+    .catch(next);
 };

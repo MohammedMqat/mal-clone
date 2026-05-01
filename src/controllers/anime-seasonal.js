@@ -1,4 +1,4 @@
-export const seasonal = (req, res) => {
+export const seasonal = (req, res, next) => {
   fetch(`https://api.jikan.moe/v4/seasons/now`)
     .then((response) => {
       if (!response.ok) {
@@ -7,9 +7,5 @@ export const seasonal = (req, res) => {
       return response.json();
     })
     .then((data) => res.json(data))
-    .catch((error) => {
-      const status = error.status || 500;
-      console.error(error);
-      res.status(status).json({ message: "Internal server error" });
-    });
+    .catch(next);
 };

@@ -3,12 +3,12 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { registerSchema, loginSchema } from "../validation.js";
 export function register(req, res, next) {
+  let username, password;
   try {
-    registerSchema.parse(req.body);
+    ({ username, password } = registerSchema.parse(req.body));
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }
-  const { username, password } = req.body;
 
   bcrypt
     .hash(password, 10)
@@ -27,12 +27,12 @@ export function register(req, res, next) {
 }
 
 export function login(req, res, next) {
+  let username, password;
   try {
-    loginSchema.parse(req.body);
+    ({ username, password } = loginSchema.parse(req.body));
   } catch (err) {
     return res.status(400).json({ message: err.issues[0].message });
   }
-  const { username, password } = req.body;
 
   db.sql`SELECT * FROM users WHERE username = ${username}`
     .then((rows) => {
