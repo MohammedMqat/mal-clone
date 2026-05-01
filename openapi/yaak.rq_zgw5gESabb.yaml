@@ -1,0 +1,27 @@
+type: http_request
+model: http_request
+id: rq_zgw5gESabb
+createdAt: 2026-04-14T18:23:32.852293689
+updatedAt: 2026-04-14T18:24:42.426357156
+workspaceId: wk_43dKgKVATa
+folderId: fl_Z2X9NDrM7W
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "username":"yaakuser",
+      "password":"password123"
+    }
+bodyType: application/json
+description: ""
+headers:
+  - enabled: true
+    name: Content-Type
+    value: application/json
+    id: fuj5CDM7Wp
+method: POST
+name: Login
+sortPriority: 0.0
+url: localhost:9080/api/auth/login
+urlParameters: []

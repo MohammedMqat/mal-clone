@@ -41,7 +41,7 @@ function render(data, entityType) {
 
     const episodes = document.createElement("span");
     episodes.className = "card-episodes";
-    if (entityType === "anime") {
+    if (entityType === "anime" || entityType === "seasonal") {
       episodes.textContent = element.episodes ? `${element.episodes} eps` : "? eps";
     } else {
       episodes.textContent = element.chapters ? `${element.chapters} ch` : "? ch";
@@ -58,7 +58,8 @@ function render(data, entityType) {
     card.appendChild(body);
 
     card.addEventListener("click", () => {
-      window.location.href = `/${entityType}/${element.mal_id}`;
+      const linkType = entityType === "seasonal" ? "anime" : entityType;
+      window.location.href = `/${linkType}/${element.mal_id}`;
     });
 
     container.appendChild(card);
@@ -71,7 +72,10 @@ function fetchPage() {
     .then((data) => render(data, "anime"))
     .then(() => fetch("/api/manga/top"))
     .then((response) => response.json())
-    .then((data) => render(data, "manga"));
+    .then((data) => render(data, "manga"))
+    .then(() => fetch("/api/anime/seasonal"))
+    .then((response) => response.json())
+    .then((data) => render(data, "seasonal"));
 }
 
 fetchPage();

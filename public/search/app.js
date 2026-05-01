@@ -2,12 +2,15 @@ const searchParams = new URLSearchParams(location.search);
 let currentPage = Number(searchParams.get("page") || 1);
 let searchQuery = searchParams.get("q");
 let entityType = location.pathname.split("/")[2] || "anime";
+let sortBy = searchParams.get("order_by");
 
 const searchResultsContainer = document.getElementById("search-results");
 const paginationContainer = document.getElementById("pagination");
 const typeSelect = document.getElementById("type");
 const textInput = document.getElementById("text");
+const sortSelect = document.getElementById("sort");
 
+sortSelect.value = sortBy;
 typeSelect.value = entityType;
 if (searchQuery) textInput.value = searchQuery;
 
@@ -15,8 +18,11 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const q = textInput.value;
   const type = typeSelect.value;
+  const sort = sortSelect.value;
   if (q.trim()) {
-    window.location.href = `/search/${type}?q=${encodeURIComponent(q)}`;
+    let url = `/search/${type}?q=${encodeURIComponent(q)}`;
+    if (sort) url += `&order_by=${sort}`;
+    window.location.href = url;
   }
 });
 
@@ -94,7 +100,9 @@ function renderResults(data) {
   previous.disabled = !hasPreviousPage;
   previous.addEventListener("click", () => {
     if (currentPage > 1) {
-      window.location.search = `?q=${searchQuery}&page=${currentPage - 1}`;
+      let search = `?q=${searchQuery}&page=${currentPage - 1}`;
+      if (sortBy) search += `&order_by=${sortBy}`;
+      window.location.search = search;
     }
   });
 
@@ -108,7 +116,9 @@ function renderResults(data) {
   next.textContent = "Next \u2192";
   next.disabled = !hasNextPage;
   next.addEventListener("click", () => {
-    window.location.search = `?q=${searchQuery}&page=${currentPage + 1}`;
+    let search = `?q=${searchQuery}&page=${currentPage + 1}`;
+    if (sortBy) search += `&order_by=${sortBy}`;
+    window.location.search = search;
   });
 
   paginationContainer.appendChild(previous);
@@ -117,7 +127,9 @@ function renderResults(data) {
 }
 
 if (searchQuery) {
-  fetch(`/api/${entityType}/search?q=${encodeURIComponent(searchQuery)}&page=${currentPage}`)
+  let fetchUrl = `/api/${entityType}/search?q=${encodeURIComponent(searchQuery)}&page=${currentPage}`;
+  if (sortBy) fetchUrl += `&order_by=${sortBy}`;
+  fetch(fetchUrl)
     .then((response) => response.json())
     .then(renderResults);
 }

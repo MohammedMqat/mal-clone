@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../shared.css" />
+
+    <title>Login</title>
+  </head>
+  <body>
+    <form id="login-form">
+      <input id="username" type="text" name="username" placeholder="username" required />
+      <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="password"
+        required
+        minlength="8"
+      />
+      <button id="submit" type="submit">submit</button>
+      <p id="error-msg"></p>
+    </form>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -65,7 +65,10 @@ function renderAnime(data) {
   tags.forEach((t) => {
     const tag = document.createElement("span");
     tag.className = "detail-tag";
-    tag.innerHTML = `<strong>${t.label}:</strong> ${t.value}`;
+    const strong = document.createElement("strong");
+    strong.textContent = t.label + ":";
+    tag.appendChild(strong);
+    tag.appendChild(document.createTextNode(" " + t.value));
     metaGrid.appendChild(tag);
   });
 
@@ -79,6 +82,12 @@ function renderAnime(data) {
       badge.textContent = g.name;
       genres.appendChild(badge);
     });
+  }
+  // Trailer
+  if (d.trailer.embed_url) {
+    const trailer = document.createElement("iframe");
+    trailer.src = d.trailer.embed_url;
+    info.appendChild(trailer);
   }
 
   // Synopsis
@@ -96,10 +105,94 @@ function renderAnime(data) {
   info.appendChild(synopsisLabel);
   info.appendChild(synopsis);
 
+  const btn = document.createElement("button");
+  btn.textContent = "Save to Favorites";
+  btn.addEventListener("click", () => {
+    fetch("/api/favorites", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        entity_id: id,
+        entity_type: entityType,
+        title: d.title,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          btn.textContent = "Saved!";
+        } else {
+          btn.textContent = "Failed";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  info.appendChild(btn);
+
   card.appendChild(info);
   card.appendChild(cover);
 
   detailsContainer.appendChild(card);
+
+  // Related anime/manga
+  if (d.relations && d.relations.length > 0) {
+    const relLabel = document.createElement("div");
+    relLabel.className = "detail-synopsis-label";
+    relLabel.textContent = "Related";
+    info.appendChild(relLabel);
+
+    const relContainer = document.createElement("div");
+    relContainer.className = "related-container";
+
+    d.relations.forEach(function (rel) {
+      rel.entry.forEach(function (entry) {
+        const a = document.createElement("a");
+        a.href = "/" + entry.type + "/" + entry.mal_id;
+        a.className = "related-link";
+        const typeSpan = document.createElement("span");
+        typeSpan.className = "related-type";
+        typeSpan.textContent = rel.relation;
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "related-name";
+        nameSpan.textContent = entry.name;
+        a.appendChild(typeSpan);
+        a.appendChild(nameSpan);
+        relContainer.appendChild(a);
+      });
+    });
+
+    info.appendChild(relContainer);
+  }
+
+  if (entityType === "anime") {
+    fetch("/api/anime/" + encodeURIComponent(id) + "/streaming")
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (streamData) {
+        const links = streamData.data;
+        if (!links || links.length === 0) return;
+
+        const label = document.createElement("div");
+        label.className = "detail-synopsis-label";
+        label.textContent = "Streaming";
+        info.appendChild(label);
+
+        links.forEach(function (link) {
+          const a = document.createElement("a");
+          a.href = link.url;
+          a.textContent = link.name;
+          a.target = "_blank";
+          a.className = "streaming-link";
+          info.appendChild(a);
+        });
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }
 }
 
 fetchAnime().then(renderAnime);

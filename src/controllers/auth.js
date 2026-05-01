@@ -1,0 +1,62 @@
+import { db } from "../db.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { registerSchema, loginSchema } from "../validation.js";
+export function register(req, res, next) {
+  let username, password;
+  try {
+    ({ username, password } = registerSchema.parse(req.body));
+  } catch (err) {
+    return res.status(400).json({ message: err.issues[0].message });
+  }
+
+  bcrypt
+    .hash(password, 10)
+    .then((hash) => {
+      return db.sql`INSERT INTO users (username, password_hash) VALUES (${username}, ${hash}) RETURNING *`;
+    })
+    .then((rows) => {
+      res.status(201).json({ username: rows[0].username });
+    })
+    .catch((err) => {
+      if (err.code === "23505") {
+        return res.status(409).json({ message: "username already taken" });
+      }
+      next(err);
+    });
+}
+
+export function login(req, res, next) {
+  let username, password;
+  try {
+    ({ username, password } = loginSchema.parse(req.body));
+  } catch (err) {
+    return res.status(400).json({ message: err.issues[0].message });
+  }
+
+  db.sql`SELECT * FROM users WHERE username = ${username}`
+    .then((rows) => {
+      if (rows.length === 0) {
+        return res.status(401).json({ message: "invalid credentials" });
+      }
+      const user = rows[0];
+      return bcrypt.compare(password, user.password_hash).then((isMatch) => {
+        if (!isMatch) {
+          return res.status(401).json({ message: "invalid credentials" });
+        }
+        const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET, {
+          expiresIn: "7d",
+        });
+        res.cookie("token", token, {
+          httpOnly: true,
+          sameSite: "lax",
+          secure: process.env.NODE_ENV === "production",
+          maxAge: 604800000,
+        });
+        return res.status(200).json({ username: user.username });
+      });
+    })
+    .catch((err) => {
+      next(err);
+    });
+}

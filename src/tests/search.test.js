@@ -1,51 +1,48 @@
-import { app } from "../app.js";
+import { describe, test, expect, vi, afterEach } from "vitest";
 import request from "supertest";
-import { expect, vi, test } from "vitest";
+import { app } from "../app.js";
 import onePieceSearchStub from "./stubs/search-one-piece.json";
 
-test("no query is provided", () => {
-  return request(app).get("/api/anime/search").expect(400);
-});
+// Only mock external HTTP calls (fetch to Jikan API), never database calls.
 
-test("search with valid query returns anime results", () => {
-  vi.stubGlobal("fetch", () =>
-    Promise.resolve({
-      ok: true,
-      json: () =>
-        Promise.resolve({
-          data: {
-            title: "Naruto",
-            score: 8.5,
-            images: { jpg: { image_url: "some-url" } },
-          },
-        }),
-    }),
-  );
-  return request(app).get("/api/anime/search?q=naruto").expect(200);
-});
+describe("GET /api/anime/search", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
 
-test("search returns results matching stub data", () => {
-  vi.stubGlobal("fetch", () =>
-    Promise.resolve({
-      json: () => Promise.resolve(onePieceSearchStub),
-      ok: true,
-    }),
-  );
-  return request(app)
-    .get("/api/anime/search?q=onepiece")
-    .expect("content-Type", /json/)
-    .expect(200)
-    .expect((res) => {
-      expect(Array.isArray(res.body.data)).toBe(true);
-    });
-});
-test("search returns 429 when Jikan is rate limited", () => {
-  vi.stubGlobal("fetch", () =>
-    Promise.resolve({
-      status: 429,
-      ok: false,
-      json: () => Promise.resolve({ message: "rate limited" }),
-    }),
-  );
-  return request(app).get("/api/anime/search?q=some-random-anime-we-didnt-use-before").expect(429);
+  test("returns 400 when no query is provided", () => {
+    return request(app)
+      .get("/api/anime/search")
+      .expect(400)
+      .expect((res) => {
+        expect(res.body.message).toMatch(/query/i);
+      });
+  });
+
+  test("returns 200 with an array of anime for a valid query", () => {
+    vi.stubGlobal("fetch", () =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(onePieceSearchStub),
+      }),
+    );
+    return request(app)
+      .get("/api/anime/search?q=onepiece")
+      .expect("content-type", /json/)
+      .expect(200)
+      .expect((res) => {
+        expect(Array.isArray(res.body.data)).toBe(true);
+      });
+  });
+
+  test("returns 429 when Jikan is rate limited", () => {
+    vi.stubGlobal("fetch", () =>
+      Promise.resolve({
+        status: 429,
+        ok: false,
+        json: () => Promise.resolve({ message: "rate limited" }),
+      }),
+    );
+    return request(app).get("/api/anime/search?q=naruto").expect(429);
+  });
 });
