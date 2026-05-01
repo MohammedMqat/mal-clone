@@ -1,0 +1,25 @@
+{
+  "cli_version": "0.5.4",
+  "checkpoint_id": "54e2f44303b4",
+  "strategy": "manual-commit",
+  "branch": "week-6-7",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "src/router.js"
+  ],
+  "sessions": [
+    {
+      "metadata": "/54/e2f44303b4/0/metadata.json",
+      "transcript": "/54/e2f44303b4/0/full.jsonl",
+      "content_hash": "/54/e2f44303b4/0/content_hash.txt",
+      "prompt": "/54/e2f44303b4/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 55,
+    "cache_creation_tokens": 37019,
+    "cache_read_tokens": 1161890,
+    "output_tokens": 9606,
+    "api_call_count": 37
+  }
+}

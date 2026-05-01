@@ -1,0 +1,30 @@
+using gh check latest pr
+
+---
+
+using gh pr, check latest pr
+
+---
+
+check commints from mentor
+
+---
+
+just review
+
+---
+
+lets fix them one by one
+
+---
+
+yes
+
+---
+
+lets find a good fix for #2
+
+---
+
+skip it 
+for now commit and push
